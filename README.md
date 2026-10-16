@@ -1,6 +1,9 @@
 # STI QA Assistant: sexual health question answering for young people in sub-Saharan Africa
 
-> **Live app:** _link added after deployment_ · **Demo video:** _link added later_
+> **Live app:** https://sti-question-assistant.streamlit.app/ · **Demo video:** _link added later_
+>
+> The app runs on free hosting. If you see *"This app has gone to sleep"*, click the button to wake it up and
+> wait a few minutes while the models load. Model and answer files: https://huggingface.co/EddyIrasetsa/sti-qa-assistant
 
 A domain-specific question-answering assistant in English on sexual health and sexually
 transmitted infections (STIs). A user types a question in everyday language. The system returns an
