@@ -32,6 +32,26 @@ Settings chosen on the validation set; test reported once. Full table: [results/
 | MiniLM bi-encoder, fine-tuned (MNRL) | yes | 0.940 | 0.959 | 0.808 |
 | **PubMedBERT bi-encoder, fine-tuned (MNRL)** | yes | **0.952** | **0.968** | **0.835** |
 
+Seed study (3 seeds each, test acc@1): PubMedBERT 0.954 ± 0.007, MiniLM 0.941 ± 0.002, DistilBERT 0.940 ± 0.003
+([results/seed_study.md](results/seed_study.md)).
+
+## Evaluation of the final model (fine-tuned PubMedBERT)
+**"I don't know" (out-of-domain) detection.** Threshold on the top-1 cosine similarity, chosen on a tuning
+half (val + 5 held-out intents + 30 off-topic questions) and reported on a separate test half
+(test + 6 other held-out intents + 30 other off-topic questions). Full table: [results/ood_results.csv](results/ood_results.csv).
+
+| Test half | n | Refused |
+|---|---|---|
+| Unseen STI topics (held-out intents) | 160 | 98.1% |
+| Off-topic: unrelated / health-not-STI / near-domain | 10 / 10 / 10 | 100% / 100% / 100% |
+| Real in-domain questions (should be answered) | 333 | 6.9% |
+
+With the threshold, the app answers 93% of real test questions, with 98.1% of those answers correct.
+The off-topic questions were written by an AI assistant for testing only (see [evaluation/README.md](evaluation/README.md)).
+
+**Choosing one answer inside multi-answer intents** (99 val/test questions, 7.6 answers per intent on average):
+semantic matching 46.5% vs. always-first-answer 20.2% vs. random 19.2%.
+
 ## Setup
 ```bash
 python3.12 -m venv .venv
@@ -51,9 +71,13 @@ src/baselines.py                      # Majority, BM25 and TF-IDF + logistic reg
 src/evaluate.py                       # shared metrics (accuracy@1, recall@k, MRR, macro-F1)
 src/models.py                         # embedding retriever (q2q / q2a) and Transformer classifier
 src/train.py                          # fine-tuning: MNRL bi-encoder and DistilBERT classifier
+src/answer_selection.py               # step 2: choose one answer inside the predicted intent
 splits/                               # question_id -> split, held-out intent list (no data text)
 notebooks/01_data_exploration.ipynb   # dataset statistics and checks
 notebooks/02_baselines.ipynb          # baselines: tuning on val, results on test, errors
 notebooks/03_finetune.ipynb           # main models and experiments (run on Colab T4 GPU)
+notebooks/03b_seed_study.ipynb        # 3 seeds per fine-tuned model (run on Colab T4 GPU)
+notebooks/04_error_analysis.ipynb     # final model: errors, out-of-domain threshold, answer selection
+evaluation/                           # 60 out-of-domain test questions (AI-written, disclosed)
 results/                              # figures and result tables
 ```

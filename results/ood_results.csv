@@ -1,0 +1,7 @@
+confidence,threshold rule,threshold,ood_precision,ood_recall,ood_f1,in_domain_answered
+PubMedBERT top-1 cosine,best F1 on tuning half,0.854,0.89,0.984,0.935,0.931
+PubMedBERT top-1 cosine,answer 95% of val,0.8,0.947,0.942,0.945,0.97
+PubMedBERT margin (top1 - top2),best F1 on tuning half,0.153,0.747,0.932,0.829,0.82
+PubMedBERT margin (top1 - top2),answer 95% of val,0.025,0.839,0.247,0.382,0.973
+TF-IDF+LR max probability,best F1 on tuning half,0.638,0.639,0.942,0.762,0.697
+TF-IDF+LR max probability,answer 95% of val,0.232,0.747,0.295,0.423,0.943

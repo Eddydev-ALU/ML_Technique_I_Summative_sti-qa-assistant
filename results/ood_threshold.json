@@ -1,0 +1,6 @@
+{
+  "confidence": "PubMedBERT top-1 cosine",
+  "threshold": 0.8537175059318542,
+  "model": "models/best_bi_encoder",
+  "note": "chosen on the tuning half (val + half of held-out intents + half of off-topic)"
+}

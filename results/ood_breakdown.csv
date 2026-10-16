@@ -1,0 +1,6 @@
+group,n,refused
+held-out intents (unseen STI topics),160,0.981
+off-topic: unrelated,10,1.0
+off-topic: health_not_sti,10,1.0
+off-topic: near_domain,10,1.0
+in-domain test questions (should be ANSWERED),333,0.069

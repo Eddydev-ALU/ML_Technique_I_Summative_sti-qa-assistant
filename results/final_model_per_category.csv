@@ -1,0 +1,9 @@
+category,n,accuracy
+Chlamydia,57,0.982
+General STIs,14,0.786
+Gonorrhea,60,0.967
+HIV,33,0.97
+Hepatitis B,39,0.949
+Herpes,59,0.949
+Syphilis,33,0.879
+Trichomoniasis,38,1.0
