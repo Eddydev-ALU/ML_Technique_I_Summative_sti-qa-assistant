@@ -4,3 +4,4 @@ gatherUsageStats = false   # privacy: do not send usage statistics
 
 [server]
 headless = true
+fileWatcherType = "none"   # no auto-reload on code changes (not needed when deployed; avoids noisy logs)
