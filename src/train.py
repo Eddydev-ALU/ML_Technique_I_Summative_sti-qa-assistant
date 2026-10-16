@@ -189,6 +189,45 @@ def train_bi_encoder(base_model, train, val, answer_bank, pair_types=("q2q", "q2
     return model, pd.DataFrame(history)
 
 
+def train_bi_encoder_final(base_model, data, answer_bank, pair_types=("q2q", "q2a"), epochs=4, batch_size=32,
+                           lr=2e-5, warmup_ratio=0.1, max_seq_length=256, seed=42, verbose=True):
+    """Train the DEPLOYED model on ALL questions for a fixed number of epochs.
+
+    There is no validation set left to early-stop on, so we use the number of epochs that worked
+    best in the experiments (seed study: best epoch was usually 4). Same loss and settings as
+    train_bi_encoder. Returns (model, per-epoch history DataFrame).
+    """
+    set_seed(seed)
+    rng = np.random.default_rng(seed)
+    device = get_device()
+    model = SentenceTransformer(base_model, device=device)
+    model.max_seq_length = min(model.max_seq_length, max_seq_length)
+
+    steps_per_epoch = len(unique_intent_batches(build_pairs(data, data, answer_bank, pair_types, rng), batch_size, rng))
+    optimizer = torch.optim.AdamW(model.parameters(), lr=lr)
+    total_steps = steps_per_epoch * epochs
+    scheduler = get_linear_schedule_with_warmup(optimizer, int(warmup_ratio * total_steps), total_steps)
+
+    history = []
+    for epoch in range(1, epochs + 1):
+        start = time.time()
+        model.train()
+        train_losses = []
+        for batch in unique_intent_batches(build_pairs(data, data, answer_bank, pair_types, rng), batch_size, rng):
+            loss = mnrl_loss(model, batch, device)
+            loss.backward()
+            optimizer.step()
+            scheduler.step()
+            optimizer.zero_grad()
+            train_losses.append(loss.item())
+        history.append({"epoch": epoch, "train_loss": float(np.mean(train_losses)),
+                        "seconds": round(time.time() - start, 1)})
+        if verbose:
+            print(f"epoch {epoch}: train loss {history[-1]['train_loss']:.4f} | {history[-1]['seconds']}s")
+    model.eval()
+    return model, pd.DataFrame(history)
+
+
 # ----------------------------------------------------------------------------
 # Transformer classifier (cross-entropy)
 # ----------------------------------------------------------------------------
