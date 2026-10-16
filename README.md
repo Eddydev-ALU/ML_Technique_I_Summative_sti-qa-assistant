@@ -91,12 +91,14 @@ Colab-ready: open them from GitHub in Colab and choose a T4 GPU).
 
 **Run the web app locally** (needs `models/final_bi_encoder` from notebook 05):
 ```bash
-python -m src.build_app     # packages model, embeddings and answers into space_build/ (git-ignored)
-python app/app.py           # opens the Gradio app at http://127.0.0.1:7860
+python -m src.build_app     # packages models, embeddings and answers into app_artifacts/ (git-ignored)
+streamlit run app/app.py    # opens the app at http://localhost:8501
 ```
 
-**Deploy to Hugging Face Spaces:** `space_build/` is a complete Space (app, code, requirements, README with the
-Spaces header, artifacts). Upload it with `hf upload <user>/<space> space_build . --repo-type space`.
+**Deployment:** the app runs on Streamlit Community Cloud from this repository (main file `app/app.py`,
+packages in `app/requirements.txt`, Python 3.12). The model files are not in GitHub: `app_artifacts/` is
+uploaded once to a Hugging Face model repository, and the app downloads it when it starts
+(`hf upload <user>/<repo> app_artifacts .`).
 
 ## Project structure
 ```
@@ -109,8 +111,8 @@ src/models.py                         # embedding retriever (q2q / q2a) and Tran
 src/train.py                          # fine-tuning: MNRL bi-encoder and DistilBERT classifier
 src/answer_selection.py               # choose one answer inside the predicted intent
 src/inference.py                      # answer(question, detail): the deployed question-answering logic
-src/build_app.py                      # packages everything the app needs into space_build/
-app/app.py                            # Gradio web interface
+src/build_app.py                      # packages everything the app needs into app_artifacts/
+app/app.py                            # Streamlit web interface (app/requirements.txt: its packages)
 splits/                               # question_id -> split, held-out intent list (no data text)
 notebooks/01_data_exploration.ipynb   # dataset statistics and checks
 notebooks/02_baselines.ipynb          # baselines: tuning on val, results on test, errors

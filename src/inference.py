@@ -1,5 +1,5 @@
 """
-inference.py - Answer one question with the deployed system. Used by the Gradio app (app/app.py).
+inference.py - Answer one question with the deployed system. Used by the Streamlit app (app/app.py).
 
 How a question is answered (two models):
   Step 1 - which TOPIC (intent)?  Fine-tuned PubMedBERT bi-encoder.
@@ -20,7 +20,7 @@ How a question is answered (two models):
 
 Privacy: nothing here stores, prints or logs the user's question.
 
-The "artifacts" folder (built by `python -m src.build_app`) contains:
+The artifacts folder (app_artifacts/, built by `python -m src.build_app`) contains:
   model/            fine-tuned PubMedBERT (step 1)
   step2_model/      frozen all-MiniLM-L6-v2 (step 3)
   index.npz         step-1 embeddings of the known questions + their intent (numbers only, no question text)
@@ -147,7 +147,7 @@ class STIAssistant:
 _default_assistant = None
 
 
-def answer(question, detail="simple", artifacts_dir="space_build/artifacts"):
+def answer(question, detail="simple", artifacts_dir="app_artifacts"):
     global _default_assistant
     if _default_assistant is None:
         _default_assistant = STIAssistant(artifacts_dir)

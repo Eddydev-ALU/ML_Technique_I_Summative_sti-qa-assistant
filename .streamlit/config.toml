@@ -1,0 +1,6 @@
+# Streamlit settings (also used by Streamlit Community Cloud)
+[browser]
+gatherUsageStats = false   # privacy: do not send usage statistics
+
+[server]
+headless = true

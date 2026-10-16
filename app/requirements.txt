@@ -1,0 +1,10 @@
+# Packages for the deployed app only (Streamlit Community Cloud reads this file because it sits next to
+# app/app.py). The CPU-only build of PyTorch avoids downloading ~2 GB of GPU libraries.
+--extra-index-url https://download.pytorch.org/whl/cpu
+torch==2.14.1+cpu
+sentence-transformers==6.1.0
+transformers==5.20.0
+huggingface_hub==1.33.0
+numpy==2.5.4
+pandas==3.0.6
+streamlit==1.66.0
