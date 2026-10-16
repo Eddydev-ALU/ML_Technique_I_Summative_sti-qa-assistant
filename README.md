@@ -67,7 +67,7 @@ Fine-tuning pulls all questions of an intent together, which helps find the inte
 *inside* an intent; a frozen model keeps them. The app therefore uses two encoders.
 
 ## How the deployed system works
-1. **Topic (step 1):** a fine-tuned PubMedBERT bi-encoder ((`models/final_bi_encoder`, trained on all 2,502
+1. **Topic (step 1):** a fine-tuned PubMedBERT bi-encoder (`models/final_bi_encoder`, trained on all 2,502
    questions of 109 intents in notebook 05) finds the most similar known question.
 2. **Decision (step 2):** confidence ≥ 0.854 → answer; 0.728–0.854 → "Did you mean a question about …?";
    below 0.728 → "I can only answer questions about STIs …".
