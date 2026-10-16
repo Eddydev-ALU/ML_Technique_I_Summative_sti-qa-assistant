@@ -1,0 +1,25 @@
+# --- Secrets ---
+.env
+
+# --- Data & models (dataset is CC BY-NC-SA 4.0: never commit raw or derived data) ---
+data/
+models/
+*.parquet
+*.arrow
+*.pkl
+*.npy
+*.faiss
+*.safetensors
+*.bin
+*.pt
+
+# --- Python / tooling ---
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+.cache/
+hf_cache/
+wandb/
+.DS_Store

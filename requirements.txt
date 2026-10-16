@@ -1,0 +1,15 @@
+# Pinned versions (Python 3.12). Later phases will add more packages here.
+
+# Phase 1: data loading and exploration
+datasets==5.1.0
+huggingface_hub==2.2.0
+pyarrow==26.0.0
+pandas==3.0.6
+numpy==2.5.4
+matplotlib==3.11.2
+python-dotenv==1.2.4
+
+# Notebooks
+jupyter==1.1.1
+ipykernel==7.4.0
+nbconvert==7.17.2
