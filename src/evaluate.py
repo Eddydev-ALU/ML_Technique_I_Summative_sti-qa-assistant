@@ -69,3 +69,44 @@ def save_result(experiment, split, metrics, notes=""):
         table = pd.DataFrame([row])
     table.to_csv(RESULTS_FILE, index=False)
     return table
+
+
+# ----------------------------------------------------------------------------
+# Out-of-domain ("I don't know") detection
+# ----------------------------------------------------------------------------
+# The app answers only when the model's confidence is at least a threshold t; otherwise it says
+# "I don't know". We treat "should be refused" (out-of-domain) as the POSITIVE class:
+#   precision = of the questions we refused, how many really were out-of-domain?
+#   recall    = of the out-of-domain questions, how many did we refuse?
+def confidence(scores, kind="top1"):
+    """Confidence of each prediction from a score matrix.
+
+    top1   : score of the best intent (for embeddings: cosine similarity of the closest question)
+    margin : best score minus second-best score (how clearly the winner wins)
+    """
+    ordered = np.sort(np.asarray(scores), axis=1)[:, ::-1]
+    return ordered[:, 0] if kind == "top1" else ordered[:, 0] - ordered[:, 1]
+
+
+def ood_metrics(conf_in, conf_out, threshold):
+    """Detection metrics at one threshold. conf_in: in-domain questions, conf_out: out-of-domain."""
+    refused_in = np.asarray(conf_in) < threshold
+    refused_out = np.asarray(conf_out) < threshold
+    tp, fp, fn = refused_out.sum(), refused_in.sum(), (~refused_out).sum()
+    precision = tp / (tp + fp) if tp + fp else 0.0
+    recall = tp / (tp + fn) if tp + fn else 0.0
+    f1 = 2 * precision * recall / (precision + recall) if precision + recall else 0.0
+    return {"threshold": float(threshold), "ood_precision": float(precision), "ood_recall": float(recall),
+            "ood_f1": float(f1), "in_domain_answered": float(1 - refused_in.mean())}
+
+
+def choose_threshold(conf_in, conf_out):
+    """Threshold with the best OOD F1 on a TUNING set (ties: the lower threshold, i.e. answer more)."""
+    candidates = np.unique(np.concatenate([conf_in, conf_out]))
+    best = max(candidates, key=lambda t: (ood_metrics(conf_in, conf_out, t)["ood_f1"], -t))
+    return float(best)
+
+
+def threshold_for_coverage(conf_in, coverage=0.95):
+    """Alternative rule: the threshold that still answers `coverage` of in-domain questions."""
+    return float(np.quantile(conf_in, 1 - coverage))
