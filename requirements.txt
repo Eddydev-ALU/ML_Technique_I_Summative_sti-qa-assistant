@@ -1,4 +1,4 @@
-# Pinned versions (Python 3.12). Later phases will add more packages here.
+# Pinned versions (Python 3.12).
 
 # Phase 1: data loading and exploration
 pandas==3.0.6
@@ -17,6 +17,9 @@ transformers==5.20.0
 accelerate==1.15.0
 huggingface_hub==1.33.0
 tabulate==0.10.0       # markdown tables for results/experiments.md
+
+# Phase 6: web app
+gradio==6.30.0
 
 # Notebooks
 jupyter==1.1.1

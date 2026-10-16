@@ -27,3 +27,6 @@ wandb/
 
 # --- Editor settings (local only) ---
 .vscode/
+
+# --- Hugging Face Space build (contains model + answer bank; uploaded, never committed) ---
+space_build/
