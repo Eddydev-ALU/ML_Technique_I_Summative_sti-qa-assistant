@@ -2,5 +2,7 @@
   "confidence": "PubMedBERT top-1 cosine",
   "threshold": 0.8537175059318542,
   "model": "models/best_bi_encoder",
-  "note": "chosen on the tuning half (val + half of held-out intents + half of off-topic)"
+  "note": "chosen on the tuning half (val + half of held-out intents + half of off-topic)",
+  "low_threshold": 0.7278328299522401,
+  "low_threshold_rule": "90th percentile of the tuning-half off-topic confidences"
 }

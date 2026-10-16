@@ -1,4 +1,6 @@
 ,accuracy
 random choice (expected),0.192
-first,0.202
-semantic,0.465
+always the first answer,0.202
+"answer-text matching, fine-tuned PubMedBERT (step-1 model)",0.465
+"answer-text matching, frozen PubMedBERT",0.505
+"answer-text matching, frozen MiniLM",0.556

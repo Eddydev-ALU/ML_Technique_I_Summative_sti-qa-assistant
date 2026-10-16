@@ -1,0 +1,7 @@
+group,n,answer,not sure,refuse
+in-domain test (all),333,0.931,0.057,0.012
+"in-domain test, model correct",317,0.959,0.035,0.006
+"in-domain test, model WRONG",16,0.375,0.5,0.125
+"in-domain test, crowdsourced questions",24,0.708,0.208,0.083
+held-out intents (test half),160,0.019,0.381,0.6
+off-topic (test half),30,0.0,0.0,1.0
