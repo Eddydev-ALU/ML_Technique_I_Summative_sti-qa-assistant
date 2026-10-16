@@ -1,10 +1,11 @@
 # --- Secrets ---
 .env
 
-# --- Data & models (dataset is CC BY-NC-SA 4.0: never commit raw or derived data) ---
+# --- Data & models (dataset license: never commit raw or derived data) ---
 data/
 models/
 *.parquet
+*.xlsx
 *.arrow
 *.pkl
 *.npy
