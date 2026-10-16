@@ -24,3 +24,6 @@ __pycache__/
 hf_cache/
 wandb/
 .DS_Store
+
+# --- Editor settings (local only) ---
+.vscode/
