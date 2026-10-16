@@ -17,7 +17,8 @@ What it does, step by step:
      is dropped, because we cannot know which label is right.
   5. Group near-identical questions (e.g. only punctuation differs) so that a group always
      lands in ONE split. Otherwise the test set would contain copies of training questions.
-  6. Splits (fixed seed):
+  6. Splits (fixed seed). Created once, then FROZEN: later runs reuse splits/splits.csv
+     (use --resplit to create new ones):
        held_out : ~10% of intents removed entirely (tests "I don't know" on unseen topics)
        train / val / test : 70/15/15 of the groups of every remaining intent
      Intents with fewer than 3 groups go entirely to train.
@@ -281,12 +282,14 @@ def load_prepared():
     questions = pd.read_csv(os.path.join(PROCESSED_DIR, "questions.csv"))
     splits = pd.read_csv(os.path.join(SPLITS_DIR, "splits.csv"))
     bank = pd.read_csv(os.path.join(PROCESSED_DIR, "answer_bank.csv"), keep_default_na=False)
+    if set(questions["question_id"]) != set(splits["question_id"]):
+        raise RuntimeError("Processed questions and splits/splits.csv do not match. Re-run: python -m src.data_prep")
     questions = questions.merge(splits, on="question_id", how="inner", validate="one_to_one")
     return questions, bank
 
 
 # ----------------------------------------------------------------------------
-def main():
+def main(resplit=False):
     raw = load_raw_sheets()
     raw, merged_blocks = assign_intents(raw)
     bank = build_answer_bank(raw)
@@ -294,17 +297,33 @@ def main():
     n_questions_raw = len(questions)
     questions, dup_stats = remove_duplicates(questions)
     questions = add_near_duplicate_groups(questions)
-    questions["split"], held_out = make_splits(questions)
 
-    # Save data (git-ignored) and split IDs (committed)
+    splits_file = os.path.join(SPLITS_DIR, "splits.csv")
+    held_out_file = os.path.join(SPLITS_DIR, "held_out_intents.txt")
+    if os.path.exists(splits_file) and not resplit:
+        # The splits are FROZEN once created and committed: reuse them, so every machine
+        # (laptop, Colab, a marker's computer) evaluates on exactly the same test questions,
+        # even if library versions differ slightly.
+        frozen = pd.read_csv(splits_file)
+        if set(frozen["question_id"]) != set(questions["question_id"]):
+            raise RuntimeError("The cleaned questions no longer match splits/splits.csv. "
+                               "Check the data file, or run with --resplit to create new splits.")
+        questions["split"] = questions["question_id"].map(dict(zip(frozen["question_id"], frozen["split"])))
+        with open(held_out_file) as f:
+            held_out = [line.strip() for line in f if line.strip()]
+        print("Using the committed splits in splits/ (run with --resplit to create new ones)")
+    else:
+        questions["split"], held_out = make_splits(questions)
+        os.makedirs(SPLITS_DIR, exist_ok=True)
+        questions[["question_id", "split"]].to_csv(splits_file, index=False)
+        with open(held_out_file, "w") as f:
+            f.write("\n".join(held_out) + "\n")
+
+    # Save cleaned data (git-ignored: contains the dataset text)
     os.makedirs(PROCESSED_DIR, exist_ok=True)
-    os.makedirs(SPLITS_DIR, exist_ok=True)
     keep = ["question_id", "category", "intent_id", "question", "source", "row_answer_id", "group_id"]
     questions[keep].to_csv(os.path.join(PROCESSED_DIR, "questions.csv"), index=False)
     bank.to_csv(os.path.join(PROCESSED_DIR, "answer_bank.csv"), index=False)
-    questions[["question_id", "split"]].to_csv(os.path.join(SPLITS_DIR, "splits.csv"), index=False)
-    with open(os.path.join(SPLITS_DIR, "held_out_intents.txt"), "w") as f:
-        f.write("\n".join(held_out) + "\n")
 
     # Summary (numbers only)
     seen = questions[questions["split"] != "held_out"]
@@ -341,4 +360,8 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    import argparse
+
+    parser = argparse.ArgumentParser(description=__doc__.split("\n")[1])
+    parser.add_argument("--resplit", action="store_true", help="create new splits instead of reusing splits/")
+    main(resplit=parser.parse_args().resplit)
