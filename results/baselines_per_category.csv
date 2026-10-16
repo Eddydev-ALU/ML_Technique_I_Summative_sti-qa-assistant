@@ -1,0 +1,9 @@
+category,B1_bm25_q2q,B2_tfidf_logreg,n_test
+Chlamydia,0.386,0.877,57
+General STIs,0.143,0.286,14
+Gonorrhea,0.333,0.833,60
+HIV,0.545,0.848,33
+Hepatitis B,0.462,0.795,39
+Herpes,0.458,0.898,59
+Syphilis,0.273,0.788,33
+Trichomoniasis,0.316,0.842,38

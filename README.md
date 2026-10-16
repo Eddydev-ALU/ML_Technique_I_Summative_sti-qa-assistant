@@ -33,7 +33,10 @@ The split assignment (question IDs only, no text) is committed in `splits/`, so 
 src/download_data.py                  # downloads the dataset from Harvard Dataverse
 src/load_raw.py                       # reads the 8 Excel sheets into one table
 src/data_prep.py                      # cleaning, answer bank, train/val/test + held-out-intent splits
+src/baselines.py                      # Majority, BM25 and TF-IDF + logistic regression baselines
+src/evaluate.py                       # shared metrics (accuracy@1, recall@k, MRR, macro-F1)
 splits/                               # question_id -> split, held-out intent list (no data text)
 notebooks/01_data_exploration.ipynb   # dataset statistics and checks
+notebooks/02_baselines.ipynb          # baselines: tuning on val, results on test, errors
 results/                              # figures and result tables
 ```

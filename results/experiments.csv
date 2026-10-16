@@ -1,0 +1,7 @@
+experiment,split,n,accuracy@1,recall@3,recall@5,mrr,macro_f1,notes
+B0_majority,val,311,0.0386,0.0868,0.1543,0.1137,0.0009,always predicts the most frequent training intent
+B0_majority,test,333,0.042,0.1141,0.1742,0.128,0.0009,always predicts the most frequent training intent
+B1_bm25_q2q,val,311,0.3633,0.6013,0.8167,0.5309,0.3049,"question->question BM25, k1=1.2, b=0.75"
+B1_bm25_q2q,test,333,0.3604,0.6366,0.8138,0.5395,0.2552,"question->question BM25, k1=1.2, b=0.75"
+B2_tfidf_logreg,val,311,0.8264,0.91,0.9293,0.8746,0.6276,"TF-IDF char_2-5, C=100.0"
+B2_tfidf_logreg,test,333,0.8228,0.8889,0.9159,0.867,0.6099,"TF-IDF char_2-5, C=100.0"
