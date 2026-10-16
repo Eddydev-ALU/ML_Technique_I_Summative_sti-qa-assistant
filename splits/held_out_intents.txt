@@ -1,0 +1,11 @@
+Chlamydia::prevention_chlamydia
+Chlamydia::safe_sex_practices_chlamydia
+General STIs::signs_symptoms_stis
+HIV::definition_hiv
+Hepatitis B::definition_hepatitis
+Hepatitis B::types_hepatitis
+Herpes::definition_infections
+Herpes::prevention_infections
+Syphilis::origin_syphilis
+Trichomoniasis::origin_trichomoniasis
+Trichomoniasis::spread_trichomoniasis

@@ -1,0 +1,40 @@
+{
+  "seed": 42,
+  "merged_blocks": [
+    "Chlamydia::No -> prevention_chlamydia",
+    "Gonorrhea::No -> Treatment/Medication_gonorrhea",
+    "Gonorrhea::Transmission/Spread_gonorrhea_No -> Transmission/Spread_gonorrhea",
+    "Gonorrhea::Transmission/Spread_gonorrhea_Yes -> Transmission/Spread_gonorrhea",
+    "Gonorrhea::Yes -> Treatment/Medication_gonorrhea"
+  ],
+  "intents_total": 109,
+  "intents_held_out": 11,
+  "intents_seen": 98,
+  "intents_train_only": 11,
+  "questions_after_splitting_cells": 2672,
+  "conflicting_texts_dropped": 13,
+  "conflicting_rows_dropped": 27,
+  "exact_duplicate_rows_dropped": 143,
+  "questions_final": 2502,
+  "near_duplicate_groups": 1920,
+  "questions_in_multi_member_groups": 1004,
+  "largest_group_size": 6,
+  "groups_with_mixed_intents": 1,
+  "split_counts": {
+    "train": 1477,
+    "held_out": 381,
+    "test": 333,
+    "val": 311
+  },
+  "seen_questions_per_intent": {
+    "min": 1.0,
+    "50%": 16.0,
+    "max": 95.0
+  },
+  "answers_total": 386,
+  "intents_with_one_answer": 49,
+  "intents_with_several_answers": 61,
+  "answers_simple_missing_filled": 17,
+  "answers_long_missing_filled": 64,
+  "questions_with_row_answer": 418
+}

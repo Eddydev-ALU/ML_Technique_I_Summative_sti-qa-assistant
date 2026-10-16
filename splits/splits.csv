@@ -1,0 +1,2503 @@
+question_id,split
+General STIs|r2|crowdsourced|0,train
+General STIs|r3|crowdsourced|0,train
+General STIs|r4|crowdsourced|0,train
+General STIs|r5|crowdsourced|0,test
+General STIs|r7|another_way|0,train
+General STIs|r8|another_way|0,train
+General STIs|r9|another_way|0,train
+General STIs|r10|another_way|0,train
+General STIs|r11|another_way|0,train
+General STIs|r12|another_way|0,train
+General STIs|r13|another_way|0,train
+General STIs|r14|another_way|0,train
+General STIs|r15|another_way|0,val
+General STIs|r16|another_way|0,val
+General STIs|r17|another_way|0,train
+General STIs|r18|another_way|0,val
+General STIs|r19|another_way|0,train
+General STIs|r20|another_way|0,test
+General STIs|r21|another_way|0,val
+General STIs|r22|another_way|0,train
+General STIs|r23|another_way|0,train
+General STIs|r24|another_way|0,test
+General STIs|r25|another_way|0,train
+General STIs|r26|another_way|0,train
+General STIs|r28|crowdsourced|0,val
+General STIs|r29|crowdsourced|0,train
+General STIs|r35|crowdsourced|0,val
+General STIs|r36|crowdsourced|0,train
+General STIs|r38|crowdsourced|0,test
+General STIs|r39|crowdsourced|0,train
+General STIs|r40|crowdsourced|0,train
+General STIs|r41|crowdsourced|0,train
+General STIs|r42|crowdsourced|0,train
+General STIs|r43|crowdsourced|0,test
+General STIs|r44|crowdsourced|0,train
+General STIs|r45|crowdsourced|0,train
+General STIs|r47|crowdsourced|0,held_out
+General STIs|r47|another_way|0,held_out
+General STIs|r48|another_way|0,held_out
+General STIs|r49|another_way|0,held_out
+General STIs|r50|another_way|0,held_out
+General STIs|r51|another_way|0,held_out
+General STIs|r52|another_way|0,held_out
+General STIs|r53|another_way|0,held_out
+General STIs|r54|another_way|0,held_out
+General STIs|r55|another_way|0,held_out
+General STIs|r56|another_way|0,held_out
+General STIs|r57|another_way|0,held_out
+General STIs|r58|another_way|0,held_out
+General STIs|r59|another_way|0,held_out
+General STIs|r60|another_way|0,held_out
+General STIs|r61|another_way|0,held_out
+General STIs|r62|another_way|0,held_out
+General STIs|r63|crowdsourced|0,held_out
+General STIs|r64|crowdsourced|0,held_out
+General STIs|r64|another_way|0,held_out
+General STIs|r65|another_way|0,held_out
+General STIs|r66|another_way|0,held_out
+General STIs|r67|another_way|0,held_out
+General STIs|r68|another_way|0,held_out
+General STIs|r69|another_way|0,held_out
+General STIs|r70|another_way|0,held_out
+General STIs|r71|another_way|0,held_out
+General STIs|r72|another_way|0,held_out
+General STIs|r73|another_way|0,held_out
+General STIs|r74|crowdsourced|0,held_out
+General STIs|r76|crowdsourced|0,held_out
+General STIs|r77|crowdsourced|0,held_out
+General STIs|r78|crowdsourced|0,held_out
+General STIs|r81|crowdsourced|0,train
+General STIs|r82|crowdsourced|0,train
+General STIs|r83|crowdsourced|0,test
+General STIs|r84|crowdsourced|0,train
+General STIs|r85|crowdsourced|0,train
+General STIs|r86|crowdsourced|0,val
+General STIs|r87|crowdsourced|0,train
+General STIs|r89|crowdsourced|0,test
+General STIs|r91|crowdsourced|0,train
+General STIs|r92|crowdsourced|0,train
+General STIs|r93|crowdsourced|0,val
+General STIs|r94|crowdsourced|0,train
+General STIs|r97|crowdsourced|0,train
+General STIs|r100|crowdsourced|0,val
+General STIs|r101|crowdsourced|0,train
+General STIs|r104|crowdsourced|0,train
+General STIs|r105|crowdsourced|0,test
+General STIs|r106|crowdsourced|0,train
+General STIs|r107|crowdsourced|0,train
+General STIs|r109|crowdsourced|0,test
+General STIs|r115|crowdsourced|0,train
+General STIs|r116|crowdsourced|0,train
+General STIs|r117|crowdsourced|0,val
+General STIs|r122|crowdsourced|0,test
+General STIs|r123|crowdsourced|0,train
+General STIs|r124|crowdsourced|0,train
+General STIs|r125|crowdsourced|0,val
+General STIs|r126|crowdsourced|0,train
+General STIs|r127|crowdsourced|0,train
+General STIs|r130|crowdsourced|0,val
+General STIs|r131|crowdsourced|0,train
+General STIs|r132|crowdsourced|0,test
+General STIs|r133|crowdsourced|0,train
+General STIs|r136|crowdsourced|0,train
+General STIs|r137|crowdsourced|0,train
+General STIs|r140|crowdsourced|0,val
+General STIs|r141|crowdsourced|0,train
+General STIs|r142|crowdsourced|0,val
+General STIs|r143|crowdsourced|0,train
+General STIs|r144|crowdsourced|0,test
+General STIs|r152|crowdsourced|0,test
+General STIs|r153|crowdsourced|0,val
+General STIs|r154|crowdsourced|0,train
+General STIs|r161|crowdsourced|0,train
+General STIs|r162|crowdsourced|0,train
+General STIs|r163|crowdsourced|0,train
+General STIs|r171|crowdsourced|0,train
+General STIs|r172|crowdsourced|0,test
+General STIs|r173|crowdsourced|0,val
+Gonorrhea|r2|crowdsourced|0,train
+Gonorrhea|r2|another_way|0,test
+Gonorrhea|r3|another_way|0,train
+Gonorrhea|r4|another_way|0,train
+Gonorrhea|r5|another_way|0,test
+Gonorrhea|r6|another_way|0,train
+Gonorrhea|r7|another_way|0,train
+Gonorrhea|r8|another_way|0,val
+Gonorrhea|r9|another_way|0,train
+Gonorrhea|r11|another_way|0,val
+Gonorrhea|r12|another_way|0,train
+Gonorrhea|r13|another_way|0,val
+Gonorrhea|r14|another_way|0,train
+Gonorrhea|r15|another_way|0,val
+Gonorrhea|r16|another_way|0,test
+Gonorrhea|r17|another_way|0,val
+Gonorrhea|r18|another_way|0,test
+Gonorrhea|r19|another_way|0,train
+Gonorrhea|r20|another_way|0,train
+Gonorrhea|r21|another_way|0,train
+Gonorrhea|r22|another_way|0,train
+Gonorrhea|r23|another_way|0,train
+Gonorrhea|r24|another_way|0,train
+Gonorrhea|r25|another_way|0,train
+Gonorrhea|r26|another_way|0,train
+Gonorrhea|r28|another_way|0,train
+Gonorrhea|r29|another_way|0,train
+Gonorrhea|r30|another_way|0,test
+Gonorrhea|r31|another_way|0,train
+Gonorrhea|r32|another_way|0,train
+Gonorrhea|r33|another_way|0,train
+Gonorrhea|r34|another_way|0,test
+Gonorrhea|r35|another_way|0,train
+Gonorrhea|r36|another_way|0,train
+Gonorrhea|r37|another_way|0,train
+Gonorrhea|r40|another_way|0,train
+Gonorrhea|r41|another_way|0,train
+Gonorrhea|r42|another_way|0,train
+Gonorrhea|r43|another_way|0,train
+Gonorrhea|r44|another_way|0,val
+Gonorrhea|r45|another_way|0,train
+Gonorrhea|r46|another_way|0,train
+Gonorrhea|r47|another_way|0,train
+Gonorrhea|r48|another_way|0,test
+Gonorrhea|r49|another_way|0,train
+Gonorrhea|r50|another_way|0,train
+Gonorrhea|r51|another_way|0,val
+Gonorrhea|r52|another_way|0,test
+Gonorrhea|r53|another_way|0,train
+Gonorrhea|r54|another_way|0,train
+Gonorrhea|r55|another_way|0,train
+Gonorrhea|r56|another_way|0,train
+Gonorrhea|r57|another_way|0,train
+Gonorrhea|r58|another_way|0,val
+Gonorrhea|r59|another_way|0,train
+Gonorrhea|r60|another_way|0,test
+Gonorrhea|r61|another_way|0,train
+Gonorrhea|r62|another_way|0,test
+Gonorrhea|r63|another_way|0,train
+Gonorrhea|r64|another_way|0,train
+Gonorrhea|r65|another_way|0,train
+Gonorrhea|r66|another_way|0,test
+Gonorrhea|r67|another_way|0,val
+Gonorrhea|r68|another_way|0,val
+Gonorrhea|r69|another_way|0,train
+Gonorrhea|r70|another_way|0,train
+Gonorrhea|r71|another_way|0,train
+Gonorrhea|r72|another_way|0,train
+Gonorrhea|r73|another_way|0,val
+Gonorrhea|r74|another_way|0,train
+Gonorrhea|r75|another_way|0,train
+Gonorrhea|r76|another_way|0,train
+Gonorrhea|r77|another_way|0,train
+Gonorrhea|r78|another_way|0,train
+Gonorrhea|r79|another_way|0,train
+Gonorrhea|r80|another_way|0,train
+Gonorrhea|r81|another_way|0,train
+Gonorrhea|r84|another_way|0,train
+Gonorrhea|r85|another_way|0,train
+Gonorrhea|r86|another_way|0,train
+Gonorrhea|r89|another_way|0,train
+Gonorrhea|r90|another_way|0,train
+Gonorrhea|r91|another_way|0,val
+Gonorrhea|r92|another_way|0,train
+Gonorrhea|r93|another_way|0,test
+Gonorrhea|r94|another_way|0,train
+Gonorrhea|r95|another_way|0,train
+Gonorrhea|r97|another_way|0,test
+Gonorrhea|r98|another_way|0,train
+Gonorrhea|r99|another_way|0,train
+Gonorrhea|r100|another_way|0,test
+Gonorrhea|r101|another_way|0,train
+Gonorrhea|r102|another_way|0,test
+Gonorrhea|r103|another_way|0,train
+Gonorrhea|r104|another_way|0,train
+Gonorrhea|r106|another_way|0,train
+Gonorrhea|r108|another_way|0,train
+Gonorrhea|r109|another_way|0,train
+Gonorrhea|r110|another_way|0,train
+Gonorrhea|r111|another_way|0,val
+Gonorrhea|r112|another_way|0,train
+Gonorrhea|r113|another_way|0,val
+Gonorrhea|r114|another_way|0,test
+Gonorrhea|r115|another_way|0,train
+Gonorrhea|r116|another_way|0,val
+Gonorrhea|r118|another_way|0,train
+Gonorrhea|r119|another_way|0,train
+Gonorrhea|r120|another_way|0,test
+Gonorrhea|r121|another_way|0,train
+Gonorrhea|r122|another_way|0,train
+Gonorrhea|r123|another_way|0,train
+Gonorrhea|r124|another_way|0,train
+Gonorrhea|r125|another_way|0,train
+Gonorrhea|r126|another_way|0,train
+Gonorrhea|r127|another_way|0,val
+Gonorrhea|r130|another_way|0,train
+Gonorrhea|r131|another_way|0,train
+Gonorrhea|r132|another_way|0,train
+Gonorrhea|r133|another_way|0,train
+Gonorrhea|r134|another_way|0,train
+Gonorrhea|r135|another_way|0,test
+Gonorrhea|r136|another_way|0,train
+Gonorrhea|r137|another_way|0,train
+Gonorrhea|r138|another_way|0,train
+Gonorrhea|r139|another_way|0,test
+Gonorrhea|r140|another_way|0,train
+Gonorrhea|r141|another_way|0,train
+Gonorrhea|r142|another_way|0,train
+Gonorrhea|r143|another_way|0,train
+Gonorrhea|r144|another_way|0,train
+Gonorrhea|r145|another_way|0,val
+Gonorrhea|r146|another_way|0,train
+Gonorrhea|r147|another_way|0,train
+Gonorrhea|r148|another_way|0,train
+Gonorrhea|r149|another_way|0,train
+Gonorrhea|r150|another_way|0,val
+Gonorrhea|r151|another_way|0,train
+Gonorrhea|r152|another_way|0,train
+Gonorrhea|r153|another_way|0,val
+Gonorrhea|r154|another_way|0,val
+Gonorrhea|r155|another_way|0,train
+Gonorrhea|r156|another_way|0,train
+Gonorrhea|r157|another_way|0,test
+Gonorrhea|r158|another_way|0,train
+Gonorrhea|r159|another_way|0,test
+Gonorrhea|r160|another_way|0,train
+Gonorrhea|r161|another_way|0,train
+Gonorrhea|r162|another_way|0,train
+Gonorrhea|r163|another_way|0,test
+Gonorrhea|r164|another_way|0,val
+Gonorrhea|r165|another_way|0,train
+Gonorrhea|r166|another_way|0,val
+Gonorrhea|r167|another_way|0,test
+Gonorrhea|r168|another_way|0,train
+Gonorrhea|r169|another_way|0,train
+Gonorrhea|r170|another_way|0,test
+Gonorrhea|r171|another_way|0,train
+Gonorrhea|r172|another_way|0,train
+Gonorrhea|r173|another_way|0,train
+Gonorrhea|r174|another_way|0,train
+Gonorrhea|r175|another_way|0,train
+Gonorrhea|r177|another_way|0,train
+Gonorrhea|r178|another_way|0,train
+Gonorrhea|r179|another_way|0,train
+Gonorrhea|r180|another_way|0,train
+Gonorrhea|r181|another_way|0,train
+Gonorrhea|r182|another_way|0,train
+Gonorrhea|r183|another_way|0,val
+Gonorrhea|r184|another_way|0,train
+Gonorrhea|r185|another_way|0,train
+Gonorrhea|r186|another_way|0,val
+Gonorrhea|r187|another_way|0,train
+Gonorrhea|r188|another_way|0,val
+Gonorrhea|r189|another_way|0,train
+Gonorrhea|r190|another_way|0,train
+Gonorrhea|r191|another_way|0,train
+Gonorrhea|r192|another_way|0,train
+Gonorrhea|r193|another_way|0,train
+Gonorrhea|r194|another_way|0,train
+Gonorrhea|r195|another_way|0,train
+Gonorrhea|r196|another_way|0,train
+Gonorrhea|r197|another_way|0,train
+Gonorrhea|r199|another_way|0,test
+Gonorrhea|r200|another_way|0,train
+Gonorrhea|r203|another_way|0,test
+Gonorrhea|r205|another_way|0,test
+Gonorrhea|r209|another_way|0,val
+Gonorrhea|r210|another_way|0,test
+Gonorrhea|r211|another_way|0,train
+Gonorrhea|r213|another_way|0,train
+Gonorrhea|r214|another_way|0,test
+Gonorrhea|r215|another_way|0,val
+Gonorrhea|r218|another_way|0,train
+Gonorrhea|r221|another_way|0,test
+Gonorrhea|r222|another_way|0,val
+Gonorrhea|r223|another_way|0,train
+Gonorrhea|r225|another_way|0,train
+Gonorrhea|r226|another_way|0,train
+Gonorrhea|r227|another_way|0,test
+Gonorrhea|r228|another_way|0,train
+Gonorrhea|r229|another_way|0,train
+Gonorrhea|r230|another_way|0,test
+Gonorrhea|r231|another_way|0,train
+Gonorrhea|r232|another_way|0,test
+Gonorrhea|r233|another_way|0,train
+Gonorrhea|r234|another_way|0,train
+Gonorrhea|r235|another_way|0,test
+Gonorrhea|r236|another_way|0,test
+Gonorrhea|r237|another_way|0,train
+Gonorrhea|r238|another_way|0,val
+Gonorrhea|r239|another_way|0,train
+Gonorrhea|r240|another_way|0,val
+Gonorrhea|r241|another_way|0,val
+Gonorrhea|r242|another_way|0,train
+Gonorrhea|r243|another_way|0,train
+Gonorrhea|r244|another_way|0,train
+Gonorrhea|r245|another_way|0,train
+Gonorrhea|r246|another_way|0,train
+Gonorrhea|r247|another_way|0,test
+Gonorrhea|r248|another_way|0,train
+Gonorrhea|r249|another_way|0,train
+Gonorrhea|r250|another_way|0,train
+Gonorrhea|r251|another_way|0,train
+Gonorrhea|r252|another_way|0,train
+Gonorrhea|r253|another_way|0,test
+Gonorrhea|r254|another_way|0,train
+Gonorrhea|r255|another_way|0,test
+Gonorrhea|r256|another_way|0,train
+Gonorrhea|r257|another_way|0,train
+Gonorrhea|r258|another_way|0,train
+Gonorrhea|r259|another_way|0,train
+Gonorrhea|r261|another_way|0,test
+Gonorrhea|r262|another_way|0,train
+Gonorrhea|r263|another_way|0,train
+Gonorrhea|r264|another_way|0,test
+Gonorrhea|r265|another_way|0,train
+Gonorrhea|r266|another_way|0,train
+Gonorrhea|r267|another_way|0,train
+Gonorrhea|r268|crowdsourced|0,train
+Gonorrhea|r269|another_way|0,train
+Gonorrhea|r271|another_way|0,train
+Gonorrhea|r273|another_way|0,val
+Gonorrhea|r274|another_way|0,train
+Gonorrhea|r275|another_way|0,val
+Gonorrhea|r276|another_way|0,train
+Gonorrhea|r277|another_way|0,train
+Gonorrhea|r278|another_way|0,test
+Gonorrhea|r279|another_way|0,val
+Gonorrhea|r280|another_way|0,train
+Gonorrhea|r282|another_way|0,train
+Gonorrhea|r283|another_way|0,train
+Gonorrhea|r284|another_way|0,train
+Gonorrhea|r285|another_way|0,train
+Gonorrhea|r286|another_way|0,train
+Gonorrhea|r287|another_way|0,train
+Gonorrhea|r288|another_way|0,val
+Gonorrhea|r290|crowdsourced|0,train
+Gonorrhea|r291|another_way|0,train
+Gonorrhea|r292|another_way|0,train
+Gonorrhea|r293|another_way|0,train
+Gonorrhea|r294|another_way|0,test
+Gonorrhea|r295|another_way|0,train
+Gonorrhea|r296|another_way|0,test
+Gonorrhea|r297|another_way|0,train
+Gonorrhea|r298|another_way|0,test
+Gonorrhea|r299|another_way|0,train
+Gonorrhea|r300|another_way|0,test
+Gonorrhea|r301|another_way|0,train
+Gonorrhea|r302|another_way|0,train
+Gonorrhea|r303|another_way|0,train
+Gonorrhea|r304|another_way|0,val
+Gonorrhea|r305|another_way|0,train
+Gonorrhea|r306|another_way|0,train
+Gonorrhea|r307|another_way|0,train
+Gonorrhea|r308|another_way|0,train
+Gonorrhea|r309|another_way|0,val
+Gonorrhea|r310|another_way|0,train
+Gonorrhea|r311|another_way|0,train
+Gonorrhea|r312|another_way|0,test
+Gonorrhea|r313|another_way|0,test
+Gonorrhea|r314|another_way|0,train
+Gonorrhea|r315|another_way|0,train
+Gonorrhea|r316|another_way|0,val
+Gonorrhea|r317|another_way|0,train
+Gonorrhea|r318|another_way|0,train
+Gonorrhea|r319|another_way|0,train
+Gonorrhea|r320|another_way|0,train
+Gonorrhea|r321|another_way|0,train
+Gonorrhea|r322|another_way|0,train
+Gonorrhea|r323|another_way|0,val
+Gonorrhea|r324|another_way|0,val
+Gonorrhea|r325|another_way|0,val
+Gonorrhea|r326|another_way|0,train
+Gonorrhea|r328|another_way|0,train
+Gonorrhea|r329|another_way|0,train
+Gonorrhea|r330|another_way|0,train
+Gonorrhea|r331|another_way|0,train
+Gonorrhea|r332|another_way|0,train
+Gonorrhea|r333|another_way|0,train
+Gonorrhea|r334|another_way|0,test
+Gonorrhea|r335|another_way|0,train
+Gonorrhea|r336|another_way|0,val
+Gonorrhea|r337|another_way|0,test
+Gonorrhea|r338|another_way|0,train
+Gonorrhea|r339|another_way|0,train
+Gonorrhea|r342|another_way|0,train
+Gonorrhea|r345|another_way|0,train
+Gonorrhea|r347|another_way|0,test
+Gonorrhea|r348|another_way|0,train
+Gonorrhea|r349|another_way|0,train
+Gonorrhea|r350|another_way|0,train
+Gonorrhea|r351|another_way|0,train
+Gonorrhea|r352|another_way|0,train
+Gonorrhea|r353|another_way|0,val
+Gonorrhea|r354|another_way|0,train
+Gonorrhea|r356|another_way|0,train
+Gonorrhea|r357|another_way|0,train
+Gonorrhea|r358|another_way|0,train
+Gonorrhea|r359|another_way|0,train
+Gonorrhea|r360|another_way|0,test
+Gonorrhea|r361|another_way|0,train
+Gonorrhea|r362|another_way|0,val
+Gonorrhea|r363|another_way|0,test
+Gonorrhea|r364|another_way|0,val
+Gonorrhea|r365|another_way|0,train
+Gonorrhea|r366|another_way|0,train
+Gonorrhea|r368|another_way|0,test
+Gonorrhea|r369|another_way|0,train
+Gonorrhea|r370|another_way|0,train
+Gonorrhea|r371|another_way|0,train
+Gonorrhea|r372|another_way|0,train
+Gonorrhea|r373|another_way|0,test
+Gonorrhea|r374|another_way|0,train
+Gonorrhea|r375|another_way|0,val
+Gonorrhea|r376|another_way|0,test
+Gonorrhea|r377|another_way|0,train
+Gonorrhea|r378|another_way|0,train
+Gonorrhea|r379|another_way|0,val
+Gonorrhea|r380|another_way|0,train
+Gonorrhea|r381|another_way|0,train
+Gonorrhea|r382|another_way|0,train
+Gonorrhea|r383|another_way|0,train
+Gonorrhea|r384|another_way|0,train
+Gonorrhea|r385|another_way|0,val
+Gonorrhea|r386|another_way|0,train
+Gonorrhea|r387|another_way|0,train
+Gonorrhea|r388|another_way|0,train
+Gonorrhea|r389|another_way|0,train
+Gonorrhea|r390|another_way|0,train
+Gonorrhea|r391|another_way|0,test
+Gonorrhea|r392|another_way|0,train
+Gonorrhea|r393|another_way|0,val
+Gonorrhea|r394|another_way|0,test
+Gonorrhea|r397|another_way|0,train
+Gonorrhea|r398|another_way|0,train
+Gonorrhea|r399|another_way|0,val
+Gonorrhea|r400|another_way|0,test
+Gonorrhea|r401|another_way|0,train
+Gonorrhea|r402|another_way|0,test
+Gonorrhea|r403|another_way|0,train
+Gonorrhea|r404|another_way|0,train
+Gonorrhea|r407|another_way|0,test
+Gonorrhea|r408|another_way|0,train
+Gonorrhea|r409|another_way|0,val
+Hepatitis B|r2|another_way|0,held_out
+Hepatitis B|r3|another_way|0,held_out
+Hepatitis B|r4|another_way|0,held_out
+Hepatitis B|r5|another_way|0,held_out
+Hepatitis B|r6|another_way|0,held_out
+Hepatitis B|r7|another_way|0,held_out
+Hepatitis B|r8|another_way|0,held_out
+Hepatitis B|r9|another_way|0,held_out
+Hepatitis B|r10|another_way|0,held_out
+Hepatitis B|r11|another_way|0,held_out
+Hepatitis B|r12|another_way|0,held_out
+Hepatitis B|r13|another_way|0,held_out
+Hepatitis B|r14|another_way|0,held_out
+Hepatitis B|r15|another_way|0,held_out
+Hepatitis B|r16|another_way|0,held_out
+Hepatitis B|r17|another_way|0,held_out
+Hepatitis B|r18|another_way|0,held_out
+Hepatitis B|r20|crowdsourced|0,held_out
+Hepatitis B|r20|another_way|0,held_out
+Hepatitis B|r21|crowdsourced|0,held_out
+Hepatitis B|r21|another_way|0,held_out
+Hepatitis B|r22|crowdsourced|0,held_out
+Hepatitis B|r23|crowdsourced|0,held_out
+Hepatitis B|r23|another_way|0,held_out
+Hepatitis B|r24|crowdsourced|0,held_out
+Hepatitis B|r24|another_way|0,held_out
+Hepatitis B|r25|crowdsourced|0,held_out
+Hepatitis B|r25|another_way|0,held_out
+Hepatitis B|r26|crowdsourced|0,held_out
+Hepatitis B|r26|another_way|0,held_out
+Hepatitis B|r27|crowdsourced|0,held_out
+Hepatitis B|r27|another_way|0,held_out
+Hepatitis B|r28|crowdsourced|0,held_out
+Hepatitis B|r28|another_way|0,held_out
+Hepatitis B|r29|another_way|0,held_out
+Hepatitis B|r33|crowdsourced|0,train
+Hepatitis B|r33|another_way|0,val
+Hepatitis B|r34|another_way|0,train
+Hepatitis B|r35|another_way|0,test
+Hepatitis B|r36|another_way|0,train
+Hepatitis B|r37|another_way|0,train
+Hepatitis B|r38|another_way|0,val
+Hepatitis B|r39|another_way|0,train
+Hepatitis B|r40|another_way|0,train
+Hepatitis B|r41|another_way|0,test
+Hepatitis B|r43|another_way|0,train
+Hepatitis B|r44|another_way|0,train
+Hepatitis B|r45|another_way|0,train
+Hepatitis B|r46|another_way|0,train
+Hepatitis B|r47|crowdsourced|0,val
+Hepatitis B|r47|another_way|0,test
+Hepatitis B|r48|another_way|0,train
+Hepatitis B|r49|another_way|0,train
+Hepatitis B|r50|another_way|0,train
+Hepatitis B|r52|crowdsourced|0,train
+Hepatitis B|r54|crowdsourced|0,held_out
+Hepatitis B|r54|another_way|0,held_out
+Hepatitis B|r55|another_way|0,held_out
+Hepatitis B|r56|another_way|0,held_out
+Hepatitis B|r57|another_way|0,held_out
+Hepatitis B|r58|another_way|0,held_out
+Hepatitis B|r59|another_way|0,held_out
+Hepatitis B|r60|another_way|0,held_out
+Hepatitis B|r61|another_way|0,held_out
+Hepatitis B|r62|another_way|0,held_out
+Hepatitis B|r63|another_way|0,held_out
+Hepatitis B|r64|another_way|0,held_out
+Hepatitis B|r65|another_way|0,held_out
+Hepatitis B|r66|another_way|0,held_out
+Hepatitis B|r67|another_way|0,held_out
+Hepatitis B|r68|another_way|0,held_out
+Hepatitis B|r69|another_way|0,held_out
+Hepatitis B|r70|another_way|0,held_out
+Hepatitis B|r71|another_way|0,held_out
+Hepatitis B|r72|another_way|0,held_out
+Hepatitis B|r73|crowdsourced|0,held_out
+Hepatitis B|r73|another_way|0,held_out
+Hepatitis B|r74|another_way|0,held_out
+Hepatitis B|r75|another_way|0,held_out
+Hepatitis B|r76|another_way|0,held_out
+Hepatitis B|r77|another_way|0,held_out
+Hepatitis B|r78|another_way|0,held_out
+Hepatitis B|r79|another_way|0,held_out
+Hepatitis B|r80|another_way|0,held_out
+Hepatitis B|r81|another_way|0,held_out
+Hepatitis B|r82|another_way|0,held_out
+Hepatitis B|r83|another_way|0,held_out
+Hepatitis B|r85|crowdsourced|0,val
+Hepatitis B|r85|another_way|0,train
+Hepatitis B|r91|crowdsourced|0,train
+Hepatitis B|r91|another_way|0,train
+Hepatitis B|r92|another_way|0,val
+Hepatitis B|r93|another_way|0,train
+Hepatitis B|r94|another_way|0,train
+Hepatitis B|r95|another_way|0,train
+Hepatitis B|r96|another_way|0,test
+Hepatitis B|r97|another_way|0,test
+Hepatitis B|r98|another_way|0,train
+Hepatitis B|r99|another_way|0,test
+Hepatitis B|r100|another_way|0,train
+Hepatitis B|r101|another_way|0,train
+Hepatitis B|r102|another_way|0,train
+Hepatitis B|r103|another_way|0,train
+Hepatitis B|r104|another_way|0,val
+Hepatitis B|r105|another_way|0,train
+Hepatitis B|r106|another_way|0,val
+Hepatitis B|r107|another_way|0,val
+Hepatitis B|r108|another_way|0,train
+Hepatitis B|r109|another_way|0,train
+Hepatitis B|r110|another_way|0,train
+Hepatitis B|r111|another_way|0,train
+Hepatitis B|r113|another_way|0,test
+Hepatitis B|r114|another_way|0,train
+Hepatitis B|r115|another_way|0,test
+Hepatitis B|r116|another_way|0,train
+Hepatitis B|r117|another_way|0,train
+Hepatitis B|r118|another_way|0,train
+Hepatitis B|r119|another_way|0,train
+Hepatitis B|r120|another_way|0,train
+Hepatitis B|r121|another_way|0,train
+Hepatitis B|r122|another_way|0,train
+Hepatitis B|r123|another_way|0,train
+Hepatitis B|r124|another_way|0,train
+Hepatitis B|r125|another_way|0,train
+Hepatitis B|r126|another_way|0,train
+Hepatitis B|r127|another_way|0,train
+Hepatitis B|r128|another_way|0,val
+Hepatitis B|r129|crowdsourced|0,val
+Hepatitis B|r129|another_way|0,train
+Hepatitis B|r130|another_way|0,test
+Hepatitis B|r131|another_way|0,train
+Hepatitis B|r132|another_way|0,val
+Hepatitis B|r133|another_way|0,train
+Hepatitis B|r134|another_way|0,test
+Hepatitis B|r138|crowdsourced|0,train
+Hepatitis B|r138|another_way|0,val
+Hepatitis B|r139|crowdsourced|0,val
+Hepatitis B|r139|another_way|0,test
+Hepatitis B|r140|crowdsourced|0,test
+Hepatitis B|r140|another_way|0,val
+Hepatitis B|r141|another_way|0,test
+Hepatitis B|r142|another_way|0,train
+Hepatitis B|r143|another_way|0,train
+Hepatitis B|r144|another_way|0,train
+Hepatitis B|r145|another_way|0,train
+Hepatitis B|r146|another_way|0,test
+Hepatitis B|r147|another_way|0,train
+Hepatitis B|r148|another_way|0,train
+Hepatitis B|r149|another_way|0,test
+Hepatitis B|r150|another_way|0,train
+Hepatitis B|r151|another_way|0,val
+Hepatitis B|r152|another_way|0,test
+Hepatitis B|r153|another_way|0,train
+Hepatitis B|r154|another_way|0,train
+Hepatitis B|r155|another_way|0,val
+Hepatitis B|r156|another_way|0,train
+Hepatitis B|r157|crowdsourced|0,train
+Hepatitis B|r157|another_way|0,train
+Hepatitis B|r158|another_way|0,train
+Hepatitis B|r159|another_way|0,train
+Hepatitis B|r160|another_way|0,test
+Hepatitis B|r161|another_way|0,train
+Hepatitis B|r162|another_way|0,train
+Hepatitis B|r163|another_way|0,test
+Hepatitis B|r164|another_way|0,train
+Hepatitis B|r165|another_way|0,val
+Hepatitis B|r166|another_way|0,test
+Hepatitis B|r167|another_way|0,train
+Hepatitis B|r172|crowdsourced|0,train
+Hepatitis B|r173|crowdsourced|0,train
+Hepatitis B|r174|crowdsourced|0,train
+Hepatitis B|r175|crowdsourced|0,train
+Hepatitis B|r176|crowdsourced|0,train
+Hepatitis B|r178|another_way|0,train
+Hepatitis B|r179|crowdsourced|0,train
+Hepatitis B|r179|another_way|0,val
+Hepatitis B|r180|another_way|0,test
+Hepatitis B|r181|another_way|0,val
+Hepatitis B|r182|another_way|0,test
+Hepatitis B|r183|another_way|0,train
+Hepatitis B|r184|another_way|0,train
+Hepatitis B|r186|another_way|0,test
+Hepatitis B|r187|another_way|0,train
+Hepatitis B|r188|another_way|0,train
+Hepatitis B|r189|another_way|0,val
+Hepatitis B|r190|another_way|0,train
+Hepatitis B|r191|another_way|0,train
+Hepatitis B|r192|another_way|0,train
+Hepatitis B|r193|another_way|0,train
+Hepatitis B|r194|another_way|0,train
+Hepatitis B|r195|another_way|0,val
+Hepatitis B|r196|another_way|0,val
+Hepatitis B|r197|another_way|0,test
+Hepatitis B|r198|another_way|0,val
+Hepatitis B|r199|another_way|0,test
+Hepatitis B|r200|another_way|0,train
+Hepatitis B|r201|crowdsourced|0,train
+Hepatitis B|r201|another_way|0,train
+Hepatitis B|r203|another_way|0,test
+Hepatitis B|r204|another_way|0,train
+Hepatitis B|r205|another_way|0,train
+Hepatitis B|r206|another_way|0,val
+Hepatitis B|r207|another_way|0,train
+Hepatitis B|r208|another_way|0,train
+Hepatitis B|r209|another_way|0,train
+Hepatitis B|r210|another_way|0,train
+Hepatitis B|r211|another_way|0,train
+Hepatitis B|r212|another_way|0,train
+Hepatitis B|r214|crowdsourced|0,val
+Hepatitis B|r216|crowdsourced|0,train
+Hepatitis B|r218|crowdsourced|0,train
+Hepatitis B|r218|another_way|0,train
+Hepatitis B|r219|another_way|0,val
+Hepatitis B|r220|another_way|0,train
+Hepatitis B|r221|another_way|0,val
+Hepatitis B|r222|another_way|0,train
+Hepatitis B|r223|another_way|0,train
+Hepatitis B|r224|another_way|0,train
+Hepatitis B|r225|another_way|0,val
+Hepatitis B|r226|another_way|0,val
+Hepatitis B|r227|another_way|0,train
+Hepatitis B|r228|another_way|0,train
+Hepatitis B|r229|another_way|0,val
+Hepatitis B|r230|another_way|0,test
+Hepatitis B|r231|another_way|0,train
+Hepatitis B|r232|another_way|0,train
+Hepatitis B|r233|another_way|0,train
+Hepatitis B|r234|another_way|0,train
+Hepatitis B|r235|another_way|0,train
+Hepatitis B|r236|another_way|0,train
+Hepatitis B|r237|crowdsourced|0,test
+Hepatitis B|r237|another_way|0,val
+Hepatitis B|r238|another_way|0,test
+Hepatitis B|r239|another_way|0,train
+Hepatitis B|r240|another_way|0,train
+Hepatitis B|r241|another_way|0,train
+Hepatitis B|r242|another_way|0,train
+Hepatitis B|r243|another_way|0,train
+Hepatitis B|r247|crowdsourced|0,train
+Hepatitis B|r247|another_way|0,train
+Hepatitis B|r248|another_way|0,val
+Hepatitis B|r249|another_way|0,train
+Hepatitis B|r250|another_way|0,train
+Hepatitis B|r251|another_way|0,train
+Hepatitis B|r252|another_way|0,val
+Hepatitis B|r253|another_way|0,test
+Hepatitis B|r254|another_way|0,test
+Hepatitis B|r255|another_way|0,train
+Hepatitis B|r256|another_way|0,train
+Hepatitis B|r257|another_way|0,train
+Hepatitis B|r258|another_way|0,train
+Hepatitis B|r259|another_way|0,train
+Hepatitis B|r260|another_way|0,train
+Hepatitis B|r261|another_way|0,train
+Hepatitis B|r262|another_way|0,train
+Hepatitis B|r263|another_way|0,val
+Hepatitis B|r264|another_way|0,val
+Hepatitis B|r266|crowdsourced|0,train
+Hepatitis B|r267|crowdsourced|0,train
+Hepatitis B|r268|crowdsourced|0,train
+Hepatitis B|r269|crowdsourced|0,train
+Hepatitis B|r270|crowdsourced|0,train
+Hepatitis B|r271|crowdsourced|0,test
+Hepatitis B|r273|crowdsourced|0,train
+Hepatitis B|r274|another_way|0,train
+Hepatitis B|r275|another_way|0,train
+Hepatitis B|r276|another_way|0,test
+Hepatitis B|r277|another_way|0,train
+Hepatitis B|r278|another_way|0,test
+Hepatitis B|r279|another_way|0,train
+Hepatitis B|r280|another_way|0,train
+Hepatitis B|r281|another_way|0,train
+Hepatitis B|r282|another_way|0,test
+Hepatitis B|r283|another_way|0,train
+Hepatitis B|r284|another_way|0,test
+Hepatitis B|r288|crowdsourced|0,val
+Hepatitis B|r290|another_way|0,train
+Hepatitis B|r303|crowdsourced|0,test
+Hepatitis B|r304|crowdsourced|0,train
+Hepatitis B|r305|crowdsourced|0,train
+Hepatitis B|r306|crowdsourced|0,val
+Hepatitis B|r308|crowdsourced|0,train
+Hepatitis B|r308|another_way|0,test
+Hepatitis B|r309|another_way|0,train
+Hepatitis B|r310|another_way|0,train
+Hepatitis B|r311|another_way|0,val
+Hepatitis B|r312|another_way|0,train
+Hepatitis B|r313|another_way|0,train
+Hepatitis B|r314|another_way|0,train
+Hepatitis B|r315|another_way|0,val
+Hepatitis B|r316|another_way|0,train
+Hepatitis B|r317|another_way|0,train
+Hepatitis B|r318|another_way|0,train
+Hepatitis B|r319|another_way|0,train
+Hepatitis B|r320|another_way|0,train
+Hepatitis B|r321|another_way|0,train
+Hepatitis B|r328|another_way|0,train
+Hepatitis B|r329|another_way|0,train
+Hepatitis B|r330|another_way|0,val
+Hepatitis B|r331|another_way|0,val
+Hepatitis B|r332|another_way|0,train
+Hepatitis B|r333|another_way|0,train
+Hepatitis B|r334|another_way|0,train
+Hepatitis B|r336|another_way|0,test
+Hepatitis B|r340|crowdsourced|0,train
+Hepatitis B|r341|crowdsourced|0,test
+Hepatitis B|r342|crowdsourced|0,val
+HIV|r2|crowdsourced|0,held_out
+HIV|r3|crowdsourced|0,held_out
+HIV|r4|crowdsourced|0,held_out
+HIV|r5|crowdsourced|0,held_out
+HIV|r6|crowdsourced|0,held_out
+HIV|r7|crowdsourced|0,held_out
+HIV|r8|crowdsourced|0,held_out
+HIV|r9|crowdsourced|0,held_out
+HIV|r10|crowdsourced|0,held_out
+HIV|r11|crowdsourced|0,held_out
+HIV|r11|another_way|0,held_out
+HIV|r12|another_way|0,held_out
+HIV|r13|another_way|0,held_out
+HIV|r14|another_way|0,held_out
+HIV|r15|crowdsourced|0,held_out
+HIV|r17|crowdsourced|0,train
+HIV|r17|another_way|0,train
+HIV|r18|another_way|0,test
+HIV|r19|another_way|0,train
+HIV|r20|another_way|0,train
+HIV|r21|another_way|0,val
+HIV|r22|another_way|0,val
+HIV|r23|another_way|0,val
+HIV|r24|another_way|0,train
+HIV|r25|another_way|0,train
+HIV|r26|another_way|0,test
+HIV|r27|another_way|0,train
+HIV|r28|another_way|0,test
+HIV|r29|another_way|0,test
+HIV|r30|another_way|0,val
+HIV|r32|another_way|0,train
+HIV|r33|another_way|0,train
+HIV|r34|another_way|0,train
+HIV|r35|another_way|0,train
+HIV|r36|another_way|0,test
+HIV|r37|another_way|0,train
+HIV|r38|another_way|0,train
+HIV|r39|another_way|0,val
+HIV|r40|another_way|0,train
+HIV|r42|another_way|0,train
+HIV|r43|another_way|0,train
+HIV|r44|another_way|0,train
+HIV|r45|another_way|0,train
+HIV|r46|another_way|0,train
+HIV|r47|another_way|0,train
+HIV|r49|crowdsourced|0,train
+HIV|r49|another_way|0,train
+HIV|r50|another_way|0,train
+HIV|r51|another_way|0,train
+HIV|r52|another_way|0,train
+HIV|r53|another_way|0,train
+HIV|r54|another_way|0,train
+HIV|r55|another_way|0,val
+HIV|r56|another_way|0,train
+HIV|r57|another_way|0,test
+HIV|r58|another_way|0,train
+HIV|r59|another_way|0,train
+HIV|r61|another_way|0,train
+HIV|r62|another_way|0,test
+HIV|r63|another_way|0,test
+HIV|r64|another_way|0,train
+HIV|r65|another_way|0,train
+HIV|r66|another_way|0,train
+HIV|r67|another_way|0,val
+HIV|r68|another_way|0,test
+HIV|r69|another_way|0,train
+HIV|r70|another_way|0,train
+HIV|r72|another_way|0,train
+HIV|r73|another_way|0,train
+HIV|r74|another_way|0,test
+HIV|r75|another_way|0,train
+HIV|r76|another_way|0,train
+HIV|r77|another_way|0,train
+HIV|r78|another_way|0,train
+HIV|r79|another_way|0,val
+HIV|r80|another_way|0,train
+HIV|r81|crowdsourced|0,val
+HIV|r82|crowdsourced|0,train
+HIV|r84|crowdsourced|0,train
+HIV|r84|another_way|0,val
+HIV|r85|another_way|0,test
+HIV|r86|another_way|0,test
+HIV|r87|another_way|0,val
+HIV|r88|another_way|0,train
+HIV|r89|another_way|0,train
+HIV|r90|another_way|0,train
+HIV|r91|another_way|0,train
+HIV|r92|another_way|0,train
+HIV|r93|another_way|0,test
+HIV|r94|another_way|0,train
+HIV|r95|another_way|0,train
+HIV|r96|another_way|0,train
+HIV|r97|another_way|0,train
+HIV|r98|another_way|0,val
+HIV|r101|another_way|0,train
+HIV|r102|crowdsourced|0,train
+HIV|r102|another_way|0,train
+HIV|r103|another_way|0,train
+HIV|r104|another_way|0,train
+HIV|r105|another_way|0,train
+HIV|r106|another_way|0,test
+HIV|r107|another_way|0,train
+HIV|r108|another_way|0,train
+HIV|r109|another_way|0,train
+HIV|r110|another_way|0,val
+HIV|r111|another_way|0,train
+HIV|r112|another_way|0,val
+HIV|r113|another_way|0,train
+HIV|r114|another_way|0,train
+HIV|r115|another_way|0,train
+HIV|r116|another_way|0,train
+HIV|r117|another_way|0,test
+HIV|r118|another_way|0,train
+HIV|r119|another_way|0,train
+HIV|r120|another_way|0,train
+HIV|r122|another_way|0,train
+HIV|r123|another_way|0,val
+HIV|r124|another_way|0,train
+HIV|r125|another_way|0,train
+HIV|r126|another_way|0,train
+HIV|r127|another_way|0,train
+HIV|r128|another_way|0,train
+HIV|r129|another_way|0,train
+HIV|r130|another_way|0,train
+HIV|r131|another_way|0,train
+HIV|r132|another_way|0,val
+HIV|r133|another_way|0,train
+HIV|r134|another_way|0,test
+HIV|r135|another_way|0,train
+HIV|r136|another_way|0,train
+HIV|r137|another_way|0,val
+HIV|r138|another_way|0,test
+HIV|r139|another_way|0,test
+HIV|r140|another_way|0,val
+HIV|r141|another_way|0,train
+HIV|r142|another_way|0,test
+HIV|r143|another_way|0,train
+HIV|r144|another_way|0,test
+HIV|r145|another_way|0,train
+HIV|r146|another_way|0,train
+HIV|r147|another_way|0,train
+HIV|r148|another_way|0,train
+HIV|r149|another_way|0,train
+HIV|r150|another_way|0,train
+HIV|r151|another_way|0,train
+HIV|r152|another_way|0,train
+HIV|r153|another_way|0,train
+HIV|r156|crowdsourced|0,val
+HIV|r158|crowdsourced|0,train
+HIV|r158|another_way|0,test
+HIV|r159|another_way|0,train
+HIV|r160|another_way|0,train
+HIV|r161|another_way|0,train
+HIV|r162|another_way|0,train
+HIV|r163|another_way|0,train
+HIV|r164|another_way|0,train
+HIV|r165|another_way|0,val
+HIV|r166|another_way|0,train
+HIV|r167|another_way|0,test
+HIV|r168|another_way|0,train
+HIV|r169|another_way|0,test
+HIV|r170|another_way|0,train
+HIV|r171|another_way|0,train
+HIV|r172|another_way|0,train
+HIV|r173|another_way|0,val
+HIV|r174|another_way|0,train
+HIV|r175|another_way|0,train
+HIV|r176|another_way|0,train
+HIV|r177|another_way|0,val
+HIV|r178|another_way|0,train
+HIV|r179|another_way|0,train
+HIV|r180|another_way|0,train
+HIV|r181|crowdsourced|0,train
+HIV|r182|another_way|0,val
+HIV|r183|another_way|0,val
+HIV|r184|another_way|0,train
+HIV|r185|another_way|0,train
+HIV|r186|another_way|0,train
+HIV|r187|another_way|0,test
+HIV|r188|another_way|0,train
+HIV|r190|crowdsourced|0,test
+HIV|r190|another_way|0,train
+HIV|r191|another_way|0,train
+HIV|r192|another_way|0,train
+HIV|r193|another_way|0,train
+HIV|r194|another_way|0,test
+HIV|r195|another_way|0,train
+HIV|r196|another_way|0,train
+HIV|r197|another_way|0,test
+HIV|r198|another_way|0,train
+HIV|r199|another_way|0,train
+HIV|r200|another_way|0,train
+HIV|r201|another_way|0,train
+HIV|r202|another_way|0,train
+HIV|r203|another_way|0,train
+HIV|r204|another_way|0,val
+HIV|r205|another_way|0,train
+HIV|r206|another_way|0,train
+HIV|r207|another_way|0,train
+HIV|r208|another_way|0,val
+HIV|r209|another_way|0,train
+HIV|r210|another_way|0,train
+HIV|r212|another_way|0,train
+HIV|r213|another_way|0,train
+HIV|r214|another_way|0,train
+HIV|r215|another_way|0,val
+HIV|r216|another_way|0,val
+HIV|r217|another_way|0,train
+HIV|r218|another_way|0,test
+HIV|r219|another_way|0,val
+HIV|r224|crowdsourced|0,train
+HIV|r225|crowdsourced|0,train
+HIV|r226|crowdsourced|0,val
+HIV|r227|crowdsourced|0,train
+HIV|r228|crowdsourced|0,test
+HIV|r229|crowdsourced|0,train
+HIV|r231|crowdsourced|0,val
+HIV|r232|crowdsourced|0,train
+HIV|r233|crowdsourced|0,test
+HIV|r235|crowdsourced|0,train
+HIV|r236|crowdsourced|0,train
+HIV|r236|another_way|0,test
+HIV|r237|another_way|0,train
+HIV|r238|another_way|0,train
+HIV|r239|another_way|0,val
+HIV|r241|crowdsourced|0,train
+HIV|r241|another_way|0,test
+HIV|r242|another_way|0,train
+HIV|r243|another_way|0,val
+HIV|r244|another_way|0,train
+HIV|r245|another_way|0,train
+HIV|r248|crowdsourced|0,train
+HIV|r250|crowdsourced|0,train
+HIV|r252|crowdsourced|0,train
+HIV|r253|crowdsourced|0,train
+HIV|r254|crowdsourced|0,train
+HIV|r255|crowdsourced|0,test
+HIV|r256|crowdsourced|0,train
+HIV|r257|crowdsourced|0,train
+HIV|r258|crowdsourced|0,val
+HIV|r259|crowdsourced|0,train
+HIV|r260|crowdsourced|0,train
+HIV|r262|another_way|0,train
+HIV|r281|another_way|0,train
+Herpes|r2|another_way|0,held_out
+Herpes|r3|another_way|0,held_out
+Herpes|r4|another_way|0,held_out
+Herpes|r5|another_way|0,held_out
+Herpes|r6|another_way|0,held_out
+Herpes|r7|another_way|0,held_out
+Herpes|r8|another_way|0,held_out
+Herpes|r9|another_way|0,held_out
+Herpes|r10|another_way|0,held_out
+Herpes|r11|another_way|0,held_out
+Herpes|r12|another_way|0,held_out
+Herpes|r13|another_way|0,held_out
+Herpes|r14|another_way|0,held_out
+Herpes|r15|another_way|0,held_out
+Herpes|r16|another_way|0,held_out
+Herpes|r17|another_way|0,held_out
+Herpes|r18|another_way|0,held_out
+Herpes|r19|another_way|0,held_out
+Herpes|r20|another_way|0,held_out
+Herpes|r21|another_way|0,held_out
+Herpes|r22|another_way|0,held_out
+Herpes|r23|another_way|0,held_out
+Herpes|r24|another_way|0,held_out
+Herpes|r25|another_way|0,held_out
+Herpes|r26|another_way|0,held_out
+Herpes|r28|another_way|0,held_out
+Herpes|r29|another_way|0,held_out
+Herpes|r30|another_way|0,held_out
+Herpes|r31|another_way|0,held_out
+Herpes|r32|another_way|0,held_out
+Herpes|r34|another_way|0,held_out
+Herpes|r35|another_way|0,held_out
+Herpes|r36|another_way|0,held_out
+Herpes|r38|another_way|0,held_out
+Herpes|r39|another_way|0,held_out
+Herpes|r40|another_way|0,held_out
+Herpes|r41|another_way|0,held_out
+Herpes|r43|another_way|0,held_out
+Herpes|r44|another_way|0,held_out
+Herpes|r45|another_way|0,held_out
+Herpes|r46|another_way|0,held_out
+Herpes|r49|another_way|0,test
+Herpes|r50|another_way|0,train
+Herpes|r51|another_way|0,train
+Herpes|r52|another_way|0,train
+Herpes|r53|another_way|0,train
+Herpes|r54|another_way|0,train
+Herpes|r55|another_way|0,train
+Herpes|r56|another_way|0,train
+Herpes|r57|another_way|0,train
+Herpes|r58|another_way|0,train
+Herpes|r59|another_way|0,train
+Herpes|r60|another_way|0,train
+Herpes|r61|another_way|0,train
+Herpes|r62|another_way|0,train
+Herpes|r63|another_way|0,train
+Herpes|r64|another_way|0,train
+Herpes|r65|another_way|0,train
+Herpes|r66|another_way|0,train
+Herpes|r67|another_way|0,train
+Herpes|r68|another_way|0,train
+Herpes|r69|another_way|0,train
+Herpes|r70|another_way|0,val
+Herpes|r71|another_way|0,val
+Herpes|r72|another_way|0,train
+Herpes|r73|another_way|0,val
+Herpes|r74|another_way|0,train
+Herpes|r75|another_way|0,train
+Herpes|r76|another_way|0,train
+Herpes|r77|another_way|0,train
+Herpes|r78|another_way|0,train
+Herpes|r79|another_way|0,val
+Herpes|r80|another_way|0,train
+Herpes|r81|another_way|0,test
+Herpes|r82|another_way|0,test
+Herpes|r83|another_way|0,test
+Herpes|r84|another_way|0,test
+Herpes|r85|another_way|0,train
+Herpes|r86|another_way|0,train
+Herpes|r87|another_way|0,train
+Herpes|r88|another_way|0,val
+Herpes|r89|another_way|0,train
+Herpes|r90|another_way|0,val
+Herpes|r91|another_way|0,train
+Herpes|r92|another_way|0,train
+Herpes|r93|another_way|0,train
+Herpes|r94|another_way|0,train
+Herpes|r95|another_way|0,train
+Herpes|r96|another_way|0,train
+Herpes|r97|another_way|0,val
+Herpes|r98|another_way|0,train
+Herpes|r99|another_way|0,test
+Herpes|r100|another_way|0,train
+Herpes|r101|another_way|0,test
+Herpes|r103|another_way|0,train
+Herpes|r104|another_way|0,test
+Herpes|r105|another_way|0,train
+Herpes|r107|another_way|0,train
+Herpes|r108|another_way|0,train
+Herpes|r109|another_way|0,train
+Herpes|r110|another_way|0,val
+Herpes|r112|another_way|0,train
+Herpes|r113|another_way|0,val
+Herpes|r121|another_way|0,train
+Herpes|r123|another_way|0,train
+Herpes|r124|another_way|0,train
+Herpes|r125|another_way|0,train
+Herpes|r126|another_way|0,train
+Herpes|r127|another_way|0,train
+Herpes|r128|another_way|0,train
+Herpes|r129|another_way|0,train
+Herpes|r130|another_way|0,train
+Herpes|r131|another_way|0,train
+Herpes|r132|another_way|0,train
+Herpes|r133|another_way|0,val
+Herpes|r134|another_way|0,test
+Herpes|r135|another_way|0,train
+Herpes|r136|another_way|0,train
+Herpes|r138|another_way|0,train
+Herpes|r139|another_way|0,train
+Herpes|r140|another_way|0,train
+Herpes|r141|another_way|0,val
+Herpes|r142|another_way|0,train
+Herpes|r143|another_way|0,train
+Herpes|r144|another_way|0,train
+Herpes|r145|another_way|0,test
+Herpes|r146|another_way|0,test
+Herpes|r147|another_way|0,test
+Herpes|r148|another_way|0,train
+Herpes|r149|another_way|0,train
+Herpes|r150|another_way|0,val
+Herpes|r151|another_way|0,train
+Herpes|r152|another_way|0,train
+Herpes|r153|another_way|0,train
+Herpes|r154|another_way|0,train
+Herpes|r155|another_way|0,train
+Herpes|r156|another_way|0,train
+Herpes|r157|another_way|0,test
+Herpes|r158|another_way|0,train
+Herpes|r159|another_way|0,train
+Herpes|r160|another_way|0,test
+Herpes|r161|another_way|0,train
+Herpes|r162|another_way|0,train
+Herpes|r163|another_way|0,train
+Herpes|r164|another_way|0,test
+Herpes|r165|another_way|0,train
+Herpes|r166|another_way|0,train
+Herpes|r167|another_way|0,train
+Herpes|r168|another_way|0,test
+Herpes|r169|another_way|0,train
+Herpes|r170|another_way|0,val
+Herpes|r171|another_way|0,train
+Herpes|r172|another_way|0,train
+Herpes|r173|another_way|0,train
+Herpes|r175|another_way|0,train
+Herpes|r176|another_way|0,train
+Herpes|r178|another_way|0,train
+Herpes|r179|another_way|0,train
+Herpes|r180|another_way|0,train
+Herpes|r181|another_way|0,train
+Herpes|r182|another_way|0,train
+Herpes|r183|another_way|0,train
+Herpes|r184|another_way|0,train
+Herpes|r185|another_way|0,train
+Herpes|r186|another_way|0,train
+Herpes|r187|another_way|0,train
+Herpes|r188|another_way|0,train
+Herpes|r192|another_way|0,train
+Herpes|r193|another_way|0,train
+Herpes|r195|another_way|0,train
+Herpes|r197|another_way|0,train
+Herpes|r198|another_way|0,train
+Herpes|r199|another_way|0,train
+Herpes|r200|another_way|0,train
+Herpes|r201|another_way|0,train
+Herpes|r202|another_way|0,train
+Herpes|r203|another_way|0,train
+Herpes|r204|another_way|0,train
+Herpes|r205|another_way|0,val
+Herpes|r206|another_way|0,train
+Herpes|r207|another_way|0,train
+Herpes|r208|another_way|0,train
+Herpes|r209|another_way|0,val
+Herpes|r210|another_way|0,train
+Herpes|r211|another_way|0,train
+Herpes|r212|another_way|0,train
+Herpes|r213|another_way|0,val
+Herpes|r214|another_way|0,train
+Herpes|r215|another_way|0,val
+Herpes|r216|another_way|0,val
+Herpes|r217|another_way|0,train
+Herpes|r218|another_way|0,test
+Herpes|r219|another_way|0,train
+Herpes|r220|another_way|0,test
+Herpes|r221|another_way|0,train
+Herpes|r222|another_way|0,test
+Herpes|r223|another_way|0,train
+Herpes|r224|another_way|0,val
+Herpes|r225|another_way|0,train
+Herpes|r226|another_way|0,train
+Herpes|r227|another_way|0,train
+Herpes|r228|another_way|0,test
+Herpes|r229|another_way|0,train
+Herpes|r230|another_way|0,train
+Herpes|r231|another_way|0,train
+Herpes|r232|another_way|0,test
+Herpes|r233|another_way|0,train
+Herpes|r234|another_way|0,train
+Herpes|r235|another_way|0,train
+Herpes|r236|another_way|0,test
+Herpes|r237|another_way|0,test
+Herpes|r238|another_way|0,train
+Herpes|r239|another_way|0,test
+Herpes|r240|another_way|0,train
+Herpes|r241|another_way|0,test
+Herpes|r242|another_way|0,val
+Herpes|r244|another_way|0,train
+Herpes|r245|another_way|0,val
+Herpes|r246|another_way|0,train
+Herpes|r247|another_way|0,train
+Herpes|r248|another_way|0,train
+Herpes|r249|another_way|0,train
+Herpes|r250|another_way|0,train
+Herpes|r251|another_way|0,train
+Herpes|r252|another_way|0,train
+Herpes|r253|another_way|0,train
+Herpes|r254|another_way|0,train
+Herpes|r255|another_way|0,train
+Herpes|r256|another_way|0,train
+Herpes|r257|another_way|0,test
+Herpes|r259|another_way|0,test
+Herpes|r260|another_way|0,test
+Herpes|r261|another_way|0,val
+Herpes|r263|another_way|0,val
+Herpes|r264|another_way|0,train
+Herpes|r265|another_way|0,train
+Herpes|r266|another_way|0,train
+Herpes|r267|another_way|0,train
+Herpes|r268|another_way|0,test
+Herpes|r269|another_way|0,train
+Herpes|r270|another_way|0,train
+Herpes|r271|another_way|0,test
+Herpes|r272|another_way|0,val
+Herpes|r273|another_way|0,train
+Herpes|r274|another_way|0,train
+Herpes|r275|another_way|0,train
+Herpes|r276|another_way|0,val
+Herpes|r277|another_way|0,train
+Herpes|r278|another_way|0,train
+Herpes|r279|another_way|0,train
+Herpes|r280|another_way|0,train
+Herpes|r283|another_way|0,test
+Herpes|r284|another_way|0,train
+Herpes|r285|another_way|0,train
+Herpes|r286|another_way|0,train
+Herpes|r287|another_way|0,train
+Herpes|r288|another_way|0,val
+Herpes|r289|another_way|0,train
+Herpes|r290|another_way|0,train
+Herpes|r291|another_way|0,train
+Herpes|r292|another_way|0,train
+Herpes|r293|another_way|0,train
+Herpes|r294|another_way|0,train
+Herpes|r296|another_way|0,train
+Herpes|r298|another_way|0,test
+Herpes|r299|another_way|0,train
+Herpes|r300|another_way|0,test
+Herpes|r301|another_way|0,train
+Herpes|r302|another_way|0,train
+Herpes|r303|another_way|0,train
+Herpes|r304|another_way|0,train
+Herpes|r306|another_way|0,test
+Herpes|r307|another_way|0,train
+Herpes|r308|another_way|0,train
+Herpes|r309|another_way|0,test
+Herpes|r310|another_way|0,train
+Herpes|r311|another_way|0,train
+Herpes|r312|another_way|0,test
+Herpes|r313|another_way|0,test
+Herpes|r314|another_way|0,test
+Herpes|r315|another_way|0,test
+Herpes|r316|another_way|0,train
+Herpes|r317|another_way|0,train
+Herpes|r318|another_way|0,train
+Herpes|r319|another_way|0,train
+Herpes|r320|another_way|0,train
+Herpes|r321|another_way|0,train
+Herpes|r322|another_way|0,train
+Herpes|r323|another_way|0,train
+Herpes|r324|another_way|0,train
+Herpes|r325|another_way|0,train
+Herpes|r326|another_way|0,train
+Herpes|r327|another_way|0,train
+Herpes|r328|another_way|0,train
+Herpes|r329|another_way|0,train
+Herpes|r330|another_way|0,train
+Herpes|r331|another_way|0,train
+Herpes|r332|another_way|0,train
+Herpes|r333|another_way|0,train
+Herpes|r334|another_way|0,val
+Herpes|r335|another_way|0,train
+Herpes|r336|another_way|0,train
+Herpes|r337|another_way|0,train
+Herpes|r338|another_way|0,train
+Herpes|r339|another_way|0,train
+Herpes|r340|another_way|0,train
+Herpes|r341|another_way|0,train
+Herpes|r342|another_way|0,train
+Herpes|r343|another_way|0,train
+Herpes|r344|another_way|0,test
+Herpes|r345|another_way|0,test
+Herpes|r347|another_way|0,train
+Herpes|r348|another_way|0,train
+Herpes|r349|another_way|0,val
+Herpes|r350|another_way|0,train
+Herpes|r351|another_way|0,val
+Herpes|r352|another_way|0,val
+Herpes|r353|another_way|0,train
+Herpes|r354|another_way|0,val
+Herpes|r355|another_way|0,train
+Herpes|r356|another_way|0,test
+Herpes|r357|another_way|0,train
+Herpes|r359|another_way|0,held_out
+Herpes|r360|another_way|0,held_out
+Herpes|r361|another_way|0,held_out
+Herpes|r362|another_way|0,held_out
+Herpes|r363|another_way|0,held_out
+Herpes|r364|another_way|0,held_out
+Herpes|r366|another_way|0,held_out
+Herpes|r367|another_way|0,held_out
+Herpes|r368|another_way|0,held_out
+Herpes|r369|another_way|0,held_out
+Herpes|r370|another_way|0,held_out
+Herpes|r371|another_way|0,held_out
+Herpes|r372|another_way|0,held_out
+Herpes|r373|another_way|0,held_out
+Herpes|r374|another_way|0,held_out
+Herpes|r375|another_way|0,held_out
+Herpes|r376|another_way|0,held_out
+Herpes|r377|another_way|0,held_out
+Herpes|r378|another_way|0,held_out
+Herpes|r379|another_way|0,held_out
+Herpes|r380|another_way|0,held_out
+Herpes|r381|another_way|0,held_out
+Herpes|r382|another_way|0,held_out
+Herpes|r383|another_way|0,held_out
+Herpes|r384|another_way|0,held_out
+Herpes|r385|another_way|0,held_out
+Herpes|r386|another_way|0,held_out
+Herpes|r387|another_way|0,held_out
+Herpes|r388|another_way|0,held_out
+Herpes|r389|another_way|0,held_out
+Herpes|r390|another_way|0,held_out
+Herpes|r391|another_way|0,held_out
+Herpes|r392|another_way|0,held_out
+Herpes|r393|another_way|0,held_out
+Herpes|r394|another_way|0,held_out
+Herpes|r395|another_way|0,held_out
+Herpes|r396|another_way|0,held_out
+Herpes|r397|another_way|0,held_out
+Herpes|r398|another_way|0,held_out
+Herpes|r399|another_way|0,held_out
+Herpes|r400|another_way|0,held_out
+Herpes|r401|another_way|0,held_out
+Herpes|r402|another_way|0,held_out
+Herpes|r403|another_way|0,held_out
+Herpes|r404|another_way|0,held_out
+Herpes|r405|another_way|0,held_out
+Herpes|r406|another_way|0,held_out
+Herpes|r407|another_way|0,held_out
+Herpes|r408|another_way|0,held_out
+Herpes|r409|another_way|0,held_out
+Herpes|r410|another_way|0,held_out
+Herpes|r411|another_way|0,held_out
+Herpes|r412|another_way|0,held_out
+Herpes|r413|another_way|0,held_out
+Herpes|r414|another_way|0,held_out
+Herpes|r415|another_way|0,held_out
+Herpes|r416|another_way|0,held_out
+Herpes|r417|another_way|0,held_out
+Herpes|r418|another_way|0,held_out
+Herpes|r419|another_way|0,held_out
+Herpes|r420|another_way|0,held_out
+Herpes|r421|another_way|0,held_out
+Herpes|r422|another_way|0,held_out
+Herpes|r423|another_way|0,held_out
+Herpes|r424|another_way|0,held_out
+Herpes|r425|another_way|0,held_out
+Herpes|r427|another_way|0,held_out
+Herpes|r428|another_way|0,held_out
+Herpes|r429|another_way|0,held_out
+Herpes|r430|another_way|0,held_out
+Herpes|r431|another_way|0,held_out
+Herpes|r432|another_way|0,held_out
+Herpes|r433|another_way|0,held_out
+Herpes|r434|another_way|0,held_out
+Herpes|r436|another_way|0,held_out
+Herpes|r437|another_way|0,held_out
+Herpes|r438|another_way|0,held_out
+Herpes|r439|another_way|0,held_out
+Herpes|r440|another_way|0,held_out
+Herpes|r441|another_way|0,held_out
+Herpes|r442|another_way|0,held_out
+Herpes|r443|another_way|0,held_out
+Herpes|r444|another_way|0,held_out
+Herpes|r445|another_way|0,held_out
+Herpes|r450|another_way|0,held_out
+Herpes|r451|another_way|0,held_out
+Herpes|r452|another_way|0,held_out
+Herpes|r453|another_way|0,held_out
+Herpes|r454|another_way|0,held_out
+Herpes|r456|another_way|0,train
+Herpes|r458|another_way|0,val
+Herpes|r465|crowdsourced|0,train
+Herpes|r465|another_way|0,val
+Herpes|r466|crowdsourced|0,train
+Herpes|r466|another_way|0,train
+Herpes|r467|another_way|0,train
+Herpes|r468|another_way|0,test
+Herpes|r469|another_way|0,train
+Herpes|r470|another_way|0,train
+Herpes|r471|another_way|0,test
+Herpes|r472|another_way|0,train
+Herpes|r473|another_way|0,train
+Herpes|r474|another_way|0,val
+Herpes|r475|another_way|0,test
+Herpes|r476|another_way|0,val
+Herpes|r477|another_way|0,train
+Herpes|r478|another_way|0,train
+Herpes|r479|another_way|0,train
+Herpes|r480|another_way|0,train
+Herpes|r481|another_way|0,train
+Herpes|r482|another_way|0,train
+Herpes|r483|another_way|0,train
+Herpes|r484|another_way|0,train
+Herpes|r491|another_way|0,train
+Herpes|r494|another_way|0,train
+Herpes|r495|another_way|0,val
+Herpes|r496|another_way|0,train
+Herpes|r497|another_way|0,train
+Herpes|r498|another_way|0,train
+Herpes|r499|another_way|0,train
+Herpes|r501|another_way|0,train
+Herpes|r502|another_way|0,test
+Herpes|r503|another_way|0,train
+Herpes|r504|another_way|0,test
+Herpes|r506|another_way|0,train
+Herpes|r526|another_way|0,test
+Herpes|r527|another_way|0,val
+Herpes|r528|another_way|0,train
+Herpes|r529|another_way|0,train
+Herpes|r530|another_way|0,train
+Herpes|r531|another_way|0,train
+Herpes|r533|another_way|0,train
+Herpes|r537|another_way|0,test
+Herpes|r539|another_way|0,train
+Herpes|r540|another_way|0,val
+Herpes|r541|another_way|0,val
+Herpes|r542|another_way|0,train
+Herpes|r543|another_way|0,test
+Herpes|r544|another_way|0,test
+Herpes|r545|another_way|0,train
+Herpes|r546|another_way|0,val
+Herpes|r547|another_way|0,train
+Herpes|r548|another_way|0,train
+Herpes|r549|another_way|0,train
+Herpes|r550|another_way|0,train
+Herpes|r551|another_way|0,train
+Herpes|r552|another_way|0,train
+Herpes|r553|another_way|0,train
+Herpes|r559|another_way|0,val
+Herpes|r560|another_way|0,train
+Herpes|r561|another_way|0,train
+Herpes|r562|another_way|0,train
+Herpes|r563|another_way|0,test
+Herpes|r564|another_way|0,test
+Herpes|r565|another_way|0,train
+Herpes|r566|another_way|0,train
+Herpes|r567|another_way|0,test
+Herpes|r568|another_way|0,train
+Herpes|r569|another_way|0,val
+Herpes|r570|another_way|0,train
+Herpes|r571|another_way|0,train
+Herpes|r572|another_way|0,train
+Herpes|r574|another_way|0,train
+Herpes|r575|another_way|0,train
+Herpes|r576|another_way|0,val
+Herpes|r578|another_way|0,train
+Herpes|r579|another_way|0,train
+Herpes|r580|another_way|0,train
+Herpes|r581|another_way|0,val
+Herpes|r582|another_way|0,test
+Herpes|r583|another_way|0,train
+Herpes|r584|another_way|0,train
+Herpes|r585|another_way|0,train
+Herpes|r589|another_way|0,train
+Herpes|r590|another_way|0,test
+Herpes|r591|another_way|0,val
+Herpes|r592|another_way|0,train
+Herpes|r593|another_way|0,train
+Herpes|r599|another_way|0,train
+Herpes|r601|another_way|0,train
+Herpes|r602|another_way|0,train
+Herpes|r603|another_way|0,train
+Herpes|r603|another_way|1,val
+Herpes|r603|another_way|2,train
+Herpes|r603|another_way|3,train
+Herpes|r603|another_way|4,train
+Herpes|r603|another_way|5,val
+Herpes|r606|another_way|0,train
+Herpes|r607|another_way|0,train
+Herpes|r608|another_way|0,train
+Herpes|r610|another_way|0,train
+Herpes|r611|another_way|0,test
+Herpes|r616|another_way|0,train
+Herpes|r617|another_way|0,test
+Herpes|r619|another_way|0,train
+Herpes|r620|another_way|0,test
+Herpes|r621|another_way|0,val
+Trichomoniasis|r2|crowdsourced|0,val
+Trichomoniasis|r2|another_way|0,train
+Trichomoniasis|r3|crowdsourced|0,train
+Trichomoniasis|r3|another_way|0,train
+Trichomoniasis|r4|crowdsourced|0,test
+Trichomoniasis|r4|another_way|0,train
+Trichomoniasis|r5|crowdsourced|0,train
+Trichomoniasis|r5|another_way|0,test
+Trichomoniasis|r6|crowdsourced|0,train
+Trichomoniasis|r6|another_way|0,test
+Trichomoniasis|r7|crowdsourced|0,train
+Trichomoniasis|r7|another_way|0,train
+Trichomoniasis|r8|crowdsourced|0,train
+Trichomoniasis|r8|another_way|0,val
+Trichomoniasis|r9|another_way|0,train
+Trichomoniasis|r10|another_way|0,train
+Trichomoniasis|r11|another_way|0,test
+Trichomoniasis|r12|another_way|0,train
+Trichomoniasis|r13|another_way|0,train
+Trichomoniasis|r14|another_way|0,train
+Trichomoniasis|r15|another_way|0,train
+Trichomoniasis|r16|another_way|0,train
+Trichomoniasis|r17|another_way|0,val
+Trichomoniasis|r18|another_way|0,train
+Trichomoniasis|r19|another_way|0,train
+Trichomoniasis|r21|another_way|0,test
+Trichomoniasis|r22|another_way|0,test
+Trichomoniasis|r24|crowdsourced|0,train
+Trichomoniasis|r24|another_way|0,train
+Trichomoniasis|r25|another_way|0,train
+Trichomoniasis|r26|another_way|0,val
+Trichomoniasis|r27|another_way|0,train
+Trichomoniasis|r28|another_way|0,train
+Trichomoniasis|r29|another_way|0,train
+Trichomoniasis|r30|another_way|0,train
+Trichomoniasis|r31|another_way|0,val
+Trichomoniasis|r34|crowdsourced|0,held_out
+Trichomoniasis|r34|another_way|0,held_out
+Trichomoniasis|r35|crowdsourced|0,held_out
+Trichomoniasis|r35|another_way|0,held_out
+Trichomoniasis|r36|another_way|0,held_out
+Trichomoniasis|r37|another_way|0,held_out
+Trichomoniasis|r38|another_way|0,held_out
+Trichomoniasis|r39|another_way|0,held_out
+Trichomoniasis|r41|another_way|0,held_out
+Trichomoniasis|r42|another_way|0,held_out
+Trichomoniasis|r43|another_way|0,held_out
+Trichomoniasis|r44|another_way|0,held_out
+Trichomoniasis|r45|another_way|0,held_out
+Trichomoniasis|r46|another_way|0,held_out
+Trichomoniasis|r47|another_way|0,held_out
+Trichomoniasis|r48|another_way|0,held_out
+Trichomoniasis|r49|another_way|0,held_out
+Trichomoniasis|r50|another_way|0,held_out
+Trichomoniasis|r51|another_way|0,held_out
+Trichomoniasis|r52|another_way|0,held_out
+Trichomoniasis|r53|another_way|0,held_out
+Trichomoniasis|r54|another_way|0,held_out
+Trichomoniasis|r55|another_way|0,held_out
+Trichomoniasis|r56|another_way|0,held_out
+Trichomoniasis|r57|another_way|0,held_out
+Trichomoniasis|r59|another_way|0,held_out
+Trichomoniasis|r60|another_way|0,held_out
+Trichomoniasis|r61|another_way|0,held_out
+Trichomoniasis|r62|another_way|0,held_out
+Trichomoniasis|r63|another_way|0,held_out
+Trichomoniasis|r64|another_way|0,held_out
+Trichomoniasis|r65|another_way|0,held_out
+Trichomoniasis|r66|another_way|0,held_out
+Trichomoniasis|r67|another_way|0,held_out
+Trichomoniasis|r68|another_way|0,held_out
+Trichomoniasis|r70|crowdsourced|0,val
+Trichomoniasis|r70|another_way|0,train
+Trichomoniasis|r71|another_way|0,train
+Trichomoniasis|r72|another_way|0,train
+Trichomoniasis|r73|another_way|0,train
+Trichomoniasis|r74|another_way|0,test
+Trichomoniasis|r75|another_way|0,train
+Trichomoniasis|r76|another_way|0,val
+Trichomoniasis|r77|another_way|0,train
+Trichomoniasis|r78|another_way|0,test
+Trichomoniasis|r79|another_way|0,train
+Trichomoniasis|r80|crowdsourced|0,train
+Trichomoniasis|r80|another_way|0,train
+Trichomoniasis|r81|another_way|0,val
+Trichomoniasis|r82|another_way|0,train
+Trichomoniasis|r83|another_way|0,train
+Trichomoniasis|r84|another_way|0,train
+Trichomoniasis|r85|another_way|0,train
+Trichomoniasis|r86|another_way|0,test
+Trichomoniasis|r87|another_way|0,train
+Trichomoniasis|r88|crowdsourced|0,train
+Trichomoniasis|r88|another_way|0,train
+Trichomoniasis|r89|another_way|0,train
+Trichomoniasis|r90|another_way|0,train
+Trichomoniasis|r91|another_way|0,train
+Trichomoniasis|r93|crowdsourced|0,train
+Trichomoniasis|r93|another_way|0,train
+Trichomoniasis|r94|another_way|0,train
+Trichomoniasis|r95|another_way|0,train
+Trichomoniasis|r96|another_way|0,train
+Trichomoniasis|r97|crowdsourced|0,test
+Trichomoniasis|r98|crowdsourced|0,val
+Trichomoniasis|r100|crowdsourced|0,val
+Trichomoniasis|r100|another_way|0,test
+Trichomoniasis|r101|crowdsourced|0,val
+Trichomoniasis|r101|another_way|0,train
+Trichomoniasis|r102|crowdsourced|0,test
+Trichomoniasis|r102|another_way|0,train
+Trichomoniasis|r103|another_way|0,val
+Trichomoniasis|r104|another_way|0,train
+Trichomoniasis|r105|another_way|0,train
+Trichomoniasis|r106|another_way|0,train
+Trichomoniasis|r107|another_way|0,train
+Trichomoniasis|r108|another_way|0,train
+Trichomoniasis|r109|another_way|0,train
+Trichomoniasis|r110|another_way|0,val
+Trichomoniasis|r111|another_way|0,test
+Trichomoniasis|r113|another_way|0,test
+Trichomoniasis|r114|another_way|0,train
+Trichomoniasis|r115|another_way|0,train
+Trichomoniasis|r116|another_way|0,val
+Trichomoniasis|r117|another_way|0,train
+Trichomoniasis|r118|another_way|0,train
+Trichomoniasis|r119|another_way|0,test
+Trichomoniasis|r120|another_way|0,train
+Trichomoniasis|r121|another_way|0,train
+Trichomoniasis|r122|another_way|0,train
+Trichomoniasis|r123|another_way|0,train
+Trichomoniasis|r124|another_way|0,train
+Trichomoniasis|r125|another_way|0,val
+Trichomoniasis|r126|another_way|0,train
+Trichomoniasis|r127|another_way|0,train
+Trichomoniasis|r128|another_way|0,train
+Trichomoniasis|r130|another_way|0,train
+Trichomoniasis|r131|another_way|0,test
+Trichomoniasis|r132|another_way|0,train
+Trichomoniasis|r133|another_way|0,test
+Trichomoniasis|r134|another_way|0,train
+Trichomoniasis|r135|another_way|0,train
+Trichomoniasis|r136|another_way|0,train
+Trichomoniasis|r137|another_way|0,train
+Trichomoniasis|r138|another_way|0,train
+Trichomoniasis|r139|another_way|0,train
+Trichomoniasis|r140|another_way|0,val
+Trichomoniasis|r141|another_way|0,train
+Trichomoniasis|r142|another_way|0,train
+Trichomoniasis|r143|another_way|0,train
+Trichomoniasis|r144|another_way|0,val
+Trichomoniasis|r145|another_way|0,train
+Trichomoniasis|r146|another_way|0,train
+Trichomoniasis|r148|crowdsourced|0,held_out
+Trichomoniasis|r149|crowdsourced|0,held_out
+Trichomoniasis|r150|crowdsourced|0,held_out
+Trichomoniasis|r151|crowdsourced|0,held_out
+Trichomoniasis|r152|another_way|0,held_out
+Trichomoniasis|r153|another_way|0,held_out
+Trichomoniasis|r154|another_way|0,held_out
+Trichomoniasis|r155|another_way|0,held_out
+Trichomoniasis|r156|another_way|0,held_out
+Trichomoniasis|r157|another_way|0,held_out
+Trichomoniasis|r158|another_way|0,held_out
+Trichomoniasis|r159|another_way|0,held_out
+Trichomoniasis|r160|another_way|0,held_out
+Trichomoniasis|r161|another_way|0,held_out
+Trichomoniasis|r162|another_way|0,held_out
+Trichomoniasis|r163|another_way|0,held_out
+Trichomoniasis|r164|another_way|0,held_out
+Trichomoniasis|r165|another_way|0,held_out
+Trichomoniasis|r166|another_way|0,held_out
+Trichomoniasis|r167|another_way|0,held_out
+Trichomoniasis|r168|another_way|0,held_out
+Trichomoniasis|r169|another_way|0,held_out
+Trichomoniasis|r170|another_way|0,held_out
+Trichomoniasis|r171|crowdsourced|0,held_out
+Trichomoniasis|r180|crowdsourced|0,held_out
+Trichomoniasis|r182|crowdsourced|0,train
+Trichomoniasis|r182|another_way|0,train
+Trichomoniasis|r183|crowdsourced|0,train
+Trichomoniasis|r183|another_way|0,train
+Trichomoniasis|r184|another_way|0,val
+Trichomoniasis|r185|another_way|0,test
+Trichomoniasis|r186|another_way|0,test
+Trichomoniasis|r187|another_way|0,train
+Trichomoniasis|r188|another_way|0,train
+Trichomoniasis|r189|another_way|0,train
+Trichomoniasis|r190|another_way|0,train
+Trichomoniasis|r191|another_way|0,train
+Trichomoniasis|r193|another_way|0,train
+Trichomoniasis|r194|another_way|0,train
+Trichomoniasis|r195|another_way|0,test
+Trichomoniasis|r196|another_way|0,train
+Trichomoniasis|r197|another_way|0,train
+Trichomoniasis|r198|another_way|0,val
+Trichomoniasis|r199|another_way|0,val
+Trichomoniasis|r200|another_way|0,train
+Trichomoniasis|r201|another_way|0,train
+Trichomoniasis|r203|another_way|0,train
+Trichomoniasis|r204|another_way|0,val
+Trichomoniasis|r206|another_way|0,test
+Trichomoniasis|r210|another_way|0,val
+Trichomoniasis|r211|another_way|0,val
+Trichomoniasis|r212|another_way|0,train
+Trichomoniasis|r213|another_way|0,train
+Trichomoniasis|r214|another_way|0,test
+Trichomoniasis|r215|another_way|0,train
+Trichomoniasis|r216|another_way|0,test
+Trichomoniasis|r217|another_way|0,train
+Trichomoniasis|r218|another_way|0,train
+Trichomoniasis|r219|another_way|0,test
+Trichomoniasis|r220|another_way|0,train
+Trichomoniasis|r221|another_way|0,train
+Trichomoniasis|r222|another_way|0,train
+Trichomoniasis|r223|another_way|0,train
+Trichomoniasis|r224|another_way|0,train
+Trichomoniasis|r225|another_way|0,train
+Trichomoniasis|r226|another_way|0,train
+Trichomoniasis|r229|crowdsourced|0,train
+Trichomoniasis|r232|crowdsourced|0,train
+Trichomoniasis|r232|another_way|0,train
+Trichomoniasis|r233|another_way|0,test
+Trichomoniasis|r234|another_way|0,train
+Trichomoniasis|r235|another_way|0,train
+Trichomoniasis|r236|another_way|0,train
+Trichomoniasis|r237|another_way|0,train
+Trichomoniasis|r238|another_way|0,train
+Trichomoniasis|r239|another_way|0,train
+Trichomoniasis|r240|another_way|0,train
+Trichomoniasis|r241|another_way|0,train
+Trichomoniasis|r242|another_way|0,train
+Trichomoniasis|r243|another_way|0,val
+Trichomoniasis|r244|another_way|0,train
+Trichomoniasis|r245|another_way|0,train
+Trichomoniasis|r246|another_way|0,test
+Trichomoniasis|r247|another_way|0,test
+Trichomoniasis|r248|another_way|0,train
+Trichomoniasis|r249|another_way|0,train
+Trichomoniasis|r250|another_way|0,train
+Trichomoniasis|r251|another_way|0,train
+Trichomoniasis|r252|another_way|0,test
+Trichomoniasis|r253|another_way|0,train
+Trichomoniasis|r254|another_way|0,train
+Trichomoniasis|r255|another_way|0,val
+Trichomoniasis|r256|another_way|0,val
+Trichomoniasis|r257|another_way|0,train
+Trichomoniasis|r258|another_way|0,train
+Trichomoniasis|r259|another_way|0,train
+Trichomoniasis|r260|another_way|0,test
+Trichomoniasis|r261|another_way|0,train
+Trichomoniasis|r262|another_way|0,train
+Trichomoniasis|r263|another_way|0,val
+Trichomoniasis|r264|another_way|0,val
+Trichomoniasis|r265|another_way|0,test
+Trichomoniasis|r267|crowdsourced|0,train
+Trichomoniasis|r267|another_way|0,val
+Trichomoniasis|r268|another_way|0,test
+Trichomoniasis|r269|another_way|0,train
+Trichomoniasis|r270|another_way|0,train
+Trichomoniasis|r271|another_way|0,test
+Trichomoniasis|r272|another_way|0,train
+Trichomoniasis|r273|another_way|0,train
+Trichomoniasis|r274|another_way|0,train
+Trichomoniasis|r275|another_way|0,test
+Trichomoniasis|r277|another_way|0,train
+Trichomoniasis|r278|another_way|0,test
+Trichomoniasis|r279|another_way|0,train
+Trichomoniasis|r280|another_way|0,val
+Trichomoniasis|r281|another_way|0,train
+Trichomoniasis|r282|another_way|0,train
+Trichomoniasis|r283|another_way|0,train
+Trichomoniasis|r284|another_way|0,train
+Trichomoniasis|r285|another_way|0,train
+Trichomoniasis|r286|another_way|0,train
+Trichomoniasis|r287|another_way|0,train
+Trichomoniasis|r288|another_way|0,train
+Trichomoniasis|r289|crowdsourced|0,train
+Trichomoniasis|r290|crowdsourced|0,val
+Trichomoniasis|r293|another_way|0,train
+Trichomoniasis|r294|another_way|0,train
+Trichomoniasis|r298|crowdsourced|0,train
+Trichomoniasis|r298|another_way|0,train
+Trichomoniasis|r300|another_way|0,train
+Trichomoniasis|r300|another_way|1,train
+Trichomoniasis|r300|another_way|2,train
+Trichomoniasis|r300|another_way|3,train
+Trichomoniasis|r300|another_way|4,train
+Trichomoniasis|r300|another_way|5,test
+Trichomoniasis|r300|another_way|6,train
+Trichomoniasis|r300|another_way|7,val
+Trichomoniasis|r300|another_way|8,train
+Trichomoniasis|r300|another_way|9,train
+Trichomoniasis|r300|another_way|10,train
+Trichomoniasis|r300|another_way|12,train
+Trichomoniasis|r300|another_way|13,test
+Trichomoniasis|r300|another_way|14,train
+Trichomoniasis|r300|another_way|15,val
+Trichomoniasis|r302|another_way|0,train
+Trichomoniasis|r303|another_way|0,train
+Trichomoniasis|r304|another_way|0,val
+Trichomoniasis|r305|another_way|0,val
+Trichomoniasis|r306|another_way|0,test
+Trichomoniasis|r307|another_way|0,test
+Trichomoniasis|r326|another_way|0,train
+Chlamydia|r2|another_way|0,train
+Chlamydia|r3|another_way|0,train
+Chlamydia|r4|another_way|0,train
+Chlamydia|r5|another_way|0,test
+Chlamydia|r6|another_way|0,val
+Chlamydia|r7|another_way|0,train
+Chlamydia|r8|another_way|0,train
+Chlamydia|r9|another_way|0,train
+Chlamydia|r10|another_way|0,train
+Chlamydia|r11|another_way|0,train
+Chlamydia|r13|another_way|0,val
+Chlamydia|r14|another_way|0,train
+Chlamydia|r15|another_way|0,test
+Chlamydia|r16|another_way|0,train
+Chlamydia|r17|another_way|0,train
+Chlamydia|r18|another_way|0,train
+Chlamydia|r19|another_way|0,train
+Chlamydia|r20|another_way|0,train
+Chlamydia|r21|another_way|0,train
+Chlamydia|r22|another_way|0,val
+Chlamydia|r23|another_way|0,test
+Chlamydia|r24|another_way|0,train
+Chlamydia|r27|another_way|0,train
+Chlamydia|r28|another_way|0,train
+Chlamydia|r29|another_way|0,test
+Chlamydia|r30|another_way|0,test
+Chlamydia|r31|another_way|0,val
+Chlamydia|r32|another_way|0,train
+Chlamydia|r35|another_way|0,train
+Chlamydia|r36|another_way|0,train
+Chlamydia|r37|another_way|0,test
+Chlamydia|r38|another_way|0,train
+Chlamydia|r39|another_way|0,val
+Chlamydia|r40|another_way|0,train
+Chlamydia|r41|another_way|0,train
+Chlamydia|r42|another_way|0,train
+Chlamydia|r43|another_way|0,train
+Chlamydia|r44|another_way|0,train
+Chlamydia|r45|another_way|0,train
+Chlamydia|r46|another_way|0,val
+Chlamydia|r47|another_way|0,train
+Chlamydia|r48|another_way|0,test
+Chlamydia|r49|another_way|0,train
+Chlamydia|r50|another_way|0,train
+Chlamydia|r51|another_way|0,train
+Chlamydia|r53|another_way|0,train
+Chlamydia|r54|another_way|0,test
+Chlamydia|r55|another_way|0,train
+Chlamydia|r56|another_way|0,train
+Chlamydia|r57|another_way|0,train
+Chlamydia|r58|another_way|0,train
+Chlamydia|r59|another_way|0,train
+Chlamydia|r60|another_way|0,train
+Chlamydia|r61|another_way|0,test
+Chlamydia|r62|another_way|0,val
+Chlamydia|r63|another_way|0,val
+Chlamydia|r64|another_way|0,train
+Chlamydia|r65|another_way|0,train
+Chlamydia|r68|another_way|0,val
+Chlamydia|r69|another_way|0,train
+Chlamydia|r70|another_way|0,train
+Chlamydia|r71|another_way|0,train
+Chlamydia|r72|another_way|0,train
+Chlamydia|r73|another_way|0,train
+Chlamydia|r74|another_way|0,train
+Chlamydia|r75|another_way|0,test
+Chlamydia|r77|another_way|0,train
+Chlamydia|r78|another_way|0,test
+Chlamydia|r79|another_way|0,train
+Chlamydia|r80|another_way|0,train
+Chlamydia|r81|another_way|0,train
+Chlamydia|r82|another_way|0,val
+Chlamydia|r83|another_way|0,train
+Chlamydia|r84|another_way|0,train
+Chlamydia|r85|another_way|0,train
+Chlamydia|r86|another_way|0,train
+Chlamydia|r87|another_way|0,train
+Chlamydia|r88|another_way|0,test
+Chlamydia|r89|another_way|0,train
+Chlamydia|r90|another_way|0,train
+Chlamydia|r91|another_way|0,train
+Chlamydia|r92|another_way|0,train
+Chlamydia|r93|another_way|0,val
+Chlamydia|r94|another_way|0,train
+Chlamydia|r95|another_way|0,test
+Chlamydia|r97|another_way|0,train
+Chlamydia|r98|another_way|0,train
+Chlamydia|r99|another_way|0,test
+Chlamydia|r100|another_way|0,train
+Chlamydia|r101|another_way|0,test
+Chlamydia|r102|another_way|0,train
+Chlamydia|r103|another_way|0,test
+Chlamydia|r104|another_way|0,val
+Chlamydia|r105|another_way|0,test
+Chlamydia|r106|another_way|0,train
+Chlamydia|r107|another_way|0,train
+Chlamydia|r108|another_way|0,train
+Chlamydia|r109|another_way|0,train
+Chlamydia|r110|another_way|0,test
+Chlamydia|r111|another_way|0,train
+Chlamydia|r113|another_way|0,train
+Chlamydia|r114|another_way|0,train
+Chlamydia|r115|another_way|0,train
+Chlamydia|r116|another_way|0,test
+Chlamydia|r117|another_way|0,test
+Chlamydia|r118|another_way|0,test
+Chlamydia|r119|another_way|0,train
+Chlamydia|r120|another_way|0,train
+Chlamydia|r121|another_way|0,train
+Chlamydia|r122|another_way|0,test
+Chlamydia|r123|another_way|0,train
+Chlamydia|r124|another_way|0,train
+Chlamydia|r125|another_way|0,train
+Chlamydia|r126|another_way|0,train
+Chlamydia|r127|another_way|0,test
+Chlamydia|r128|another_way|0,train
+Chlamydia|r129|another_way|0,val
+Chlamydia|r130|another_way|0,train
+Chlamydia|r131|another_way|0,train
+Chlamydia|r132|another_way|0,train
+Chlamydia|r133|another_way|0,val
+Chlamydia|r134|another_way|0,train
+Chlamydia|r135|another_way|0,train
+Chlamydia|r136|another_way|0,train
+Chlamydia|r137|another_way|0,train
+Chlamydia|r138|another_way|0,train
+Chlamydia|r139|another_way|0,val
+Chlamydia|r140|another_way|0,val
+Chlamydia|r141|another_way|0,train
+Chlamydia|r142|another_way|0,val
+Chlamydia|r143|another_way|0,val
+Chlamydia|r144|another_way|0,val
+Chlamydia|r145|another_way|0,train
+Chlamydia|r146|another_way|0,train
+Chlamydia|r147|another_way|0,train
+Chlamydia|r148|another_way|0,train
+Chlamydia|r149|another_way|0,train
+Chlamydia|r150|another_way|0,train
+Chlamydia|r151|another_way|0,train
+Chlamydia|r152|another_way|0,train
+Chlamydia|r153|another_way|0,train
+Chlamydia|r154|another_way|0,test
+Chlamydia|r155|another_way|0,train
+Chlamydia|r156|another_way|0,train
+Chlamydia|r157|another_way|0,test
+Chlamydia|r158|another_way|0,train
+Chlamydia|r159|another_way|0,train
+Chlamydia|r160|another_way|0,train
+Chlamydia|r161|another_way|0,train
+Chlamydia|r162|another_way|0,val
+Chlamydia|r163|another_way|0,train
+Chlamydia|r164|another_way|0,train
+Chlamydia|r165|another_way|0,val
+Chlamydia|r166|another_way|0,val
+Chlamydia|r167|another_way|0,val
+Chlamydia|r168|another_way|0,train
+Chlamydia|r170|another_way|0,train
+Chlamydia|r171|another_way|0,train
+Chlamydia|r172|another_way|0,val
+Chlamydia|r173|another_way|0,test
+Chlamydia|r174|another_way|0,val
+Chlamydia|r175|another_way|0,train
+Chlamydia|r176|another_way|0,val
+Chlamydia|r177|another_way|0,train
+Chlamydia|r178|another_way|0,test
+Chlamydia|r179|another_way|0,train
+Chlamydia|r180|another_way|0,train
+Chlamydia|r181|another_way|0,train
+Chlamydia|r182|another_way|0,train
+Chlamydia|r183|another_way|0,train
+Chlamydia|r184|another_way|0,train
+Chlamydia|r185|another_way|0,train
+Chlamydia|r186|another_way|0,test
+Chlamydia|r187|another_way|0,train
+Chlamydia|r188|another_way|0,val
+Chlamydia|r189|another_way|0,train
+Chlamydia|r190|another_way|0,train
+Chlamydia|r191|another_way|0,train
+Chlamydia|r192|another_way|0,test
+Chlamydia|r193|another_way|0,train
+Chlamydia|r194|another_way|0,train
+Chlamydia|r195|another_way|0,train
+Chlamydia|r196|another_way|0,train
+Chlamydia|r197|another_way|0,val
+Chlamydia|r198|another_way|0,train
+Chlamydia|r199|another_way|0,train
+Chlamydia|r204|another_way|0,train
+Chlamydia|r205|another_way|0,train
+Chlamydia|r206|another_way|0,train
+Chlamydia|r207|another_way|0,val
+Chlamydia|r209|another_way|0,train
+Chlamydia|r210|another_way|0,test
+Chlamydia|r211|another_way|0,val
+Chlamydia|r213|another_way|0,train
+Chlamydia|r214|another_way|0,test
+Chlamydia|r215|another_way|0,train
+Chlamydia|r216|crowdsourced|0,train
+Chlamydia|r216|another_way|0,test
+Chlamydia|r220|another_way|0,train
+Chlamydia|r221|another_way|0,train
+Chlamydia|r222|another_way|0,test
+Chlamydia|r225|crowdsourced|0,train
+Chlamydia|r225|another_way|0,train
+Chlamydia|r227|another_way|0,train
+Chlamydia|r228|another_way|0,train
+Chlamydia|r229|another_way|0,train
+Chlamydia|r230|another_way|0,train
+Chlamydia|r231|another_way|0,val
+Chlamydia|r232|another_way|0,train
+Chlamydia|r233|another_way|0,train
+Chlamydia|r235|another_way|0,train
+Chlamydia|r237|another_way|0,held_out
+Chlamydia|r238|another_way|0,held_out
+Chlamydia|r239|another_way|0,held_out
+Chlamydia|r240|another_way|0,held_out
+Chlamydia|r241|another_way|0,held_out
+Chlamydia|r242|another_way|0,held_out
+Chlamydia|r243|another_way|0,held_out
+Chlamydia|r244|another_way|0,held_out
+Chlamydia|r245|another_way|0,held_out
+Chlamydia|r246|another_way|0,held_out
+Chlamydia|r248|another_way|0,held_out
+Chlamydia|r249|another_way|0,held_out
+Chlamydia|r250|another_way|0,held_out
+Chlamydia|r251|another_way|0,held_out
+Chlamydia|r252|another_way|0,held_out
+Chlamydia|r253|another_way|0,held_out
+Chlamydia|r254|another_way|0,held_out
+Chlamydia|r255|another_way|0,held_out
+Chlamydia|r256|another_way|0,held_out
+Chlamydia|r257|another_way|0,held_out
+Chlamydia|r258|another_way|0,held_out
+Chlamydia|r259|another_way|0,held_out
+Chlamydia|r260|another_way|0,held_out
+Chlamydia|r261|another_way|0,held_out
+Chlamydia|r262|another_way|0,held_out
+Chlamydia|r263|another_way|0,held_out
+Chlamydia|r264|another_way|0,held_out
+Chlamydia|r265|another_way|0,held_out
+Chlamydia|r267|another_way|0,held_out
+Chlamydia|r268|another_way|0,held_out
+Chlamydia|r269|another_way|0,held_out
+Chlamydia|r270|another_way|0,held_out
+Chlamydia|r271|another_way|0,held_out
+Chlamydia|r272|another_way|0,held_out
+Chlamydia|r273|another_way|0,held_out
+Chlamydia|r274|another_way|0,held_out
+Chlamydia|r275|another_way|0,held_out
+Chlamydia|r276|another_way|0,held_out
+Chlamydia|r277|another_way|0,held_out
+Chlamydia|r278|another_way|0,held_out
+Chlamydia|r279|another_way|0,held_out
+Chlamydia|r280|another_way|0,held_out
+Chlamydia|r282|another_way|0,held_out
+Chlamydia|r283|another_way|0,held_out
+Chlamydia|r284|another_way|0,held_out
+Chlamydia|r285|another_way|0,held_out
+Chlamydia|r286|another_way|0,held_out
+Chlamydia|r289|another_way|0,held_out
+Chlamydia|r290|another_way|0,held_out
+Chlamydia|r291|another_way|0,held_out
+Chlamydia|r292|another_way|0,held_out
+Chlamydia|r294|another_way|0,test
+Chlamydia|r295|another_way|0,val
+Chlamydia|r296|another_way|0,train
+Chlamydia|r298|another_way|0,train
+Chlamydia|r299|another_way|0,train
+Chlamydia|r300|another_way|0,test
+Chlamydia|r301|another_way|0,train
+Chlamydia|r302|another_way|0,train
+Chlamydia|r303|another_way|0,val
+Chlamydia|r304|another_way|0,val
+Chlamydia|r305|another_way|0,train
+Chlamydia|r307|another_way|0,train
+Chlamydia|r308|another_way|0,train
+Chlamydia|r309|another_way|0,test
+Chlamydia|r310|another_way|0,train
+Chlamydia|r311|another_way|0,test
+Chlamydia|r312|another_way|0,test
+Chlamydia|r313|another_way|0,val
+Chlamydia|r314|another_way|0,train
+Chlamydia|r315|another_way|0,train
+Chlamydia|r316|another_way|0,val
+Chlamydia|r317|another_way|0,train
+Chlamydia|r318|another_way|0,train
+Chlamydia|r319|another_way|0,train
+Chlamydia|r320|another_way|0,val
+Chlamydia|r321|another_way|0,train
+Chlamydia|r322|another_way|0,test
+Chlamydia|r323|another_way|0,test
+Chlamydia|r324|another_way|0,train
+Chlamydia|r325|another_way|0,train
+Chlamydia|r326|another_way|0,train
+Chlamydia|r327|another_way|0,train
+Chlamydia|r328|another_way|0,test
+Chlamydia|r329|another_way|0,train
+Chlamydia|r330|another_way|0,train
+Chlamydia|r331|another_way|0,test
+Chlamydia|r332|another_way|0,test
+Chlamydia|r334|another_way|0,train
+Chlamydia|r335|another_way|0,train
+Chlamydia|r336|another_way|0,train
+Chlamydia|r337|another_way|0,train
+Chlamydia|r338|another_way|0,train
+Chlamydia|r339|another_way|0,val
+Chlamydia|r340|another_way|0,train
+Chlamydia|r341|another_way|0,train
+Chlamydia|r343|another_way|0,train
+Chlamydia|r344|another_way|0,train
+Chlamydia|r345|another_way|0,train
+Chlamydia|r346|another_way|0,test
+Chlamydia|r347|another_way|0,train
+Chlamydia|r348|another_way|0,val
+Chlamydia|r349|another_way|0,train
+Chlamydia|r350|another_way|0,test
+Chlamydia|r351|another_way|0,train
+Chlamydia|r352|another_way|0,train
+Chlamydia|r353|another_way|0,train
+Chlamydia|r354|another_way|0,val
+Chlamydia|r355|another_way|0,train
+Chlamydia|r356|another_way|0,train
+Chlamydia|r357|another_way|0,train
+Chlamydia|r358|another_way|0,train
+Chlamydia|r359|another_way|0,train
+Chlamydia|r360|another_way|0,train
+Chlamydia|r361|another_way|0,train
+Chlamydia|r362|another_way|0,train
+Chlamydia|r363|another_way|0,train
+Chlamydia|r365|another_way|0,train
+Chlamydia|r366|another_way|0,train
+Chlamydia|r367|another_way|0,train
+Chlamydia|r369|another_way|0,train
+Chlamydia|r371|another_way|0,train
+Chlamydia|r372|another_way|0,train
+Chlamydia|r373|another_way|0,train
+Chlamydia|r374|another_way|0,train
+Chlamydia|r375|another_way|0,train
+Chlamydia|r376|another_way|0,val
+Chlamydia|r377|another_way|0,test
+Chlamydia|r378|another_way|0,train
+Chlamydia|r379|another_way|0,train
+Chlamydia|r380|another_way|0,train
+Chlamydia|r381|another_way|0,train
+Chlamydia|r382|another_way|0,train
+Chlamydia|r383|another_way|0,train
+Chlamydia|r384|another_way|0,test
+Chlamydia|r385|another_way|0,val
+Chlamydia|r386|another_way|0,train
+Chlamydia|r387|another_way|0,train
+Chlamydia|r388|another_way|0,train
+Chlamydia|r389|another_way|0,train
+Chlamydia|r390|another_way|0,train
+Chlamydia|r391|another_way|0,test
+Chlamydia|r392|another_way|0,val
+Chlamydia|r393|another_way|0,test
+Chlamydia|r394|another_way|0,train
+Chlamydia|r395|another_way|0,test
+Chlamydia|r396|another_way|0,val
+Chlamydia|r397|another_way|0,train
+Chlamydia|r398|another_way|0,train
+Chlamydia|r399|another_way|0,test
+Chlamydia|r400|another_way|0,train
+Chlamydia|r401|another_way|0,val
+Chlamydia|r402|another_way|0,train
+Chlamydia|r403|another_way|0,val
+Chlamydia|r404|another_way|0,train
+Chlamydia|r405|another_way|0,train
+Chlamydia|r406|another_way|0,train
+Chlamydia|r407|another_way|0,train
+Chlamydia|r408|another_way|0,train
+Chlamydia|r409|another_way|0,train
+Chlamydia|r411|another_way|0,held_out
+Chlamydia|r412|another_way|0,held_out
+Chlamydia|r413|another_way|0,held_out
+Chlamydia|r414|another_way|0,held_out
+Chlamydia|r415|another_way|0,held_out
+Chlamydia|r416|another_way|0,held_out
+Chlamydia|r417|another_way|0,held_out
+Chlamydia|r418|another_way|0,held_out
+Chlamydia|r422|another_way|0,held_out
+Chlamydia|r424|another_way|0,held_out
+Chlamydia|r426|another_way|0,train
+Chlamydia|r430|another_way|0,test
+Chlamydia|r431|another_way|0,val
+Chlamydia|r432|another_way|0,train
+Chlamydia|r433|another_way|0,train
+Chlamydia|r434|another_way|0,test
+Chlamydia|r435|another_way|0,train
+Chlamydia|r436|another_way|0,train
+Chlamydia|r437|another_way|0,val
+Chlamydia|r438|another_way|0,train
+Chlamydia|r439|another_way|0,train
+Chlamydia|r440|another_way|0,train
+Chlamydia|r441|another_way|0,train
+Chlamydia|r442|another_way|0,train
+Chlamydia|r444|another_way|0,val
+Chlamydia|r451|another_way|0,train
+Chlamydia|r452|another_way|0,train
+Chlamydia|r453|another_way|0,train
+Chlamydia|r454|another_way|0,train
+Chlamydia|r455|another_way|0,test
+Chlamydia|r456|another_way|0,train
+Chlamydia|r457|another_way|0,train
+Chlamydia|r459|another_way|0,train
+Chlamydia|r459|another_way|1,train
+Chlamydia|r459|another_way|2,train
+Chlamydia|r459|another_way|3,val
+Chlamydia|r459|another_way|4,train
+Chlamydia|r459|another_way|5,train
+Chlamydia|r459|another_way|6,train
+Chlamydia|r459|another_way|7,train
+Chlamydia|r459|another_way|9,train
+Chlamydia|r469|another_way|0,val
+Chlamydia|r470|another_way|0,train
+Chlamydia|r471|another_way|0,train
+Chlamydia|r472|another_way|0,train
+Chlamydia|r473|another_way|0,train
+Chlamydia|r474|another_way|0,train
+Chlamydia|r475|another_way|0,test
+Chlamydia|r476|another_way|0,test
+Chlamydia|r478|another_way|0,train
+Chlamydia|r480|another_way|0,val
+Chlamydia|r482|another_way|0,train
+Chlamydia|r483|another_way|0,test
+Chlamydia|r490|another_way|0,train
+Syphilis|r2|another_way|0,test
+Syphilis|r3|another_way|0,train
+Syphilis|r4|another_way|0,train
+Syphilis|r5|another_way|0,val
+Syphilis|r6|another_way|0,train
+Syphilis|r7|another_way|0,train
+Syphilis|r11|another_way|0,train
+Syphilis|r12|another_way|0,train
+Syphilis|r13|another_way|0,train
+Syphilis|r14|another_way|0,train
+Syphilis|r15|another_way|0,train
+Syphilis|r16|another_way|0,train
+Syphilis|r17|another_way|0,val
+Syphilis|r19|another_way|0,val
+Syphilis|r25|another_way|0,train
+Syphilis|r26|another_way|0,test
+Syphilis|r27|another_way|0,train
+Syphilis|r28|another_way|0,test
+Syphilis|r30|another_way|0,held_out
+Syphilis|r31|another_way|0,held_out
+Syphilis|r32|another_way|0,held_out
+Syphilis|r33|another_way|0,held_out
+Syphilis|r34|another_way|0,held_out
+Syphilis|r35|another_way|0,held_out
+Syphilis|r36|another_way|0,held_out
+Syphilis|r37|another_way|0,held_out
+Syphilis|r38|another_way|0,held_out
+Syphilis|r39|another_way|0,held_out
+Syphilis|r40|another_way|0,held_out
+Syphilis|r41|another_way|0,held_out
+Syphilis|r42|another_way|0,held_out
+Syphilis|r43|another_way|0,held_out
+Syphilis|r44|another_way|0,held_out
+Syphilis|r47|another_way|0,test
+Syphilis|r48|another_way|0,val
+Syphilis|r49|another_way|0,val
+Syphilis|r50|another_way|0,test
+Syphilis|r54|another_way|0,train
+Syphilis|r55|another_way|0,train
+Syphilis|r56|another_way|0,train
+Syphilis|r58|another_way|0,train
+Syphilis|r58|another_way|2,train
+Syphilis|r58|another_way|3,val
+Syphilis|r58|another_way|4,train
+Syphilis|r58|another_way|5,test
+Syphilis|r58|another_way|6,train
+Syphilis|r58|another_way|7,train
+Syphilis|r58|another_way|8,train
+Syphilis|r58|another_way|10,train
+Syphilis|r58|another_way|11,train
+Syphilis|r58|another_way|12,train
+Syphilis|r92|another_way|0,train
+Syphilis|r93|another_way|0,train
+Syphilis|r94|another_way|0,train
+Syphilis|r95|another_way|0,val
+Syphilis|r96|another_way|0,test
+Syphilis|r97|another_way|0,val
+Syphilis|r98|another_way|0,val
+Syphilis|r99|another_way|0,test
+Syphilis|r102|another_way|0,train
+Syphilis|r103|another_way|0,train
+Syphilis|r104|another_way|0,val
+Syphilis|r105|another_way|0,train
+Syphilis|r106|another_way|0,test
+Syphilis|r107|another_way|0,train
+Syphilis|r108|another_way|0,test
+Syphilis|r109|another_way|0,train
+Syphilis|r112|another_way|0,train
+Syphilis|r113|another_way|0,train
+Syphilis|r114|another_way|0,train
+Syphilis|r115|another_way|0,train
+Syphilis|r116|another_way|0,train
+Syphilis|r117|another_way|0,train
+Syphilis|r118|another_way|0,train
+Syphilis|r119|another_way|0,train
+Syphilis|r120|another_way|0,train
+Syphilis|r123|another_way|0,train
+Syphilis|r124|another_way|0,val
+Syphilis|r125|another_way|0,train
+Syphilis|r126|another_way|0,train
+Syphilis|r127|another_way|0,train
+Syphilis|r128|another_way|0,test
+Syphilis|r129|another_way|0,val
+Syphilis|r131|another_way|0,train
+Syphilis|r140|another_way|0,val
+Syphilis|r141|another_way|0,train
+Syphilis|r142|another_way|0,train
+Syphilis|r143|another_way|0,train
+Syphilis|r145|another_way|0,train
+Syphilis|r146|another_way|0,test
+Syphilis|r147|another_way|0,test
+Syphilis|r148|another_way|0,train
+Syphilis|r149|another_way|0,train
+Syphilis|r150|another_way|0,val
+Syphilis|r151|another_way|0,val
+Syphilis|r152|another_way|0,train
+Syphilis|r153|another_way|0,train
+Syphilis|r154|another_way|0,train
+Syphilis|r155|another_way|0,train
+Syphilis|r156|another_way|0,train
+Syphilis|r157|another_way|0,train
+Syphilis|r158|another_way|0,train
+Syphilis|r160|another_way|0,train
+Syphilis|r161|another_way|0,train
+Syphilis|r162|another_way|0,train
+Syphilis|r163|another_way|0,val
+Syphilis|r164|another_way|0,train
+Syphilis|r165|another_way|0,test
+Syphilis|r166|another_way|0,train
+Syphilis|r167|another_way|0,train
+Syphilis|r168|another_way|0,test
+Syphilis|r170|another_way|0,train
+Syphilis|r171|another_way|0,val
+Syphilis|r172|another_way|0,train
+Syphilis|r173|another_way|0,train
+Syphilis|r174|another_way|0,test
+Syphilis|r175|another_way|0,train
+Syphilis|r176|another_way|0,train
+Syphilis|r177|another_way|0,train
+Syphilis|r178|another_way|0,val
+Syphilis|r179|another_way|0,test
+Syphilis|r181|another_way|0,val
+Syphilis|r182|another_way|0,test
+Syphilis|r183|another_way|0,train
+Syphilis|r184|another_way|0,train
+Syphilis|r185|another_way|0,train
+Syphilis|r186|crowdsourced|0,train
+Syphilis|r186|another_way|0,val
+Syphilis|r188|another_way|0,train
+Syphilis|r192|another_way|0,train
+Syphilis|r193|another_way|0,train
+Syphilis|r194|another_way|0,train
+Syphilis|r195|another_way|0,train
+Syphilis|r196|another_way|0,train
+Syphilis|r197|another_way|0,train
+Syphilis|r198|another_way|0,test
+Syphilis|r199|another_way|0,val
+Syphilis|r203|another_way|0,train
+Syphilis|r204|another_way|0,train
+Syphilis|r206|another_way|0,train
+Syphilis|r207|another_way|0,train
+Syphilis|r208|another_way|0,train
+Syphilis|r209|another_way|0,test
+Syphilis|r210|another_way|0,test
+Syphilis|r211|another_way|0,test
+Syphilis|r212|another_way|0,val
+Syphilis|r213|another_way|0,train
+Syphilis|r214|another_way|0,train
+Syphilis|r216|another_way|0,train
+Syphilis|r217|crowdsourced|0,train
+Syphilis|r220|another_way|0,train
+Syphilis|r221|another_way|0,train
+Syphilis|r222|another_way|0,test
+Syphilis|r223|another_way|0,train
+Syphilis|r224|another_way|0,val
+Syphilis|r225|another_way|0,train
+Syphilis|r226|another_way|0,train
+Syphilis|r227|another_way|0,train
+Syphilis|r228|another_way|0,test
+Syphilis|r229|another_way|0,train
+Syphilis|r230|another_way|0,val
+Syphilis|r232|another_way|0,train
+Syphilis|r233|another_way|0,val
+Syphilis|r234|another_way|0,train
+Syphilis|r235|another_way|0,val
+Syphilis|r236|another_way|0,train
+Syphilis|r237|another_way|0,train
+Syphilis|r238|another_way|0,val
+Syphilis|r239|another_way|0,test
+Syphilis|r240|another_way|0,train
+Syphilis|r241|another_way|0,train
+Syphilis|r242|another_way|0,test
+Syphilis|r243|another_way|0,train
+Syphilis|r244|another_way|0,train
+Syphilis|r245|another_way|0,train
+Syphilis|r246|another_way|0,train
+Syphilis|r247|another_way|0,test
+Syphilis|r248|another_way|0,train
+Syphilis|r249|another_way|0,train
+Syphilis|r250|another_way|0,train
+Syphilis|r257|another_way|0,train
+Syphilis|r258|another_way|0,test
+Syphilis|r259|another_way|0,train
+Syphilis|r260|another_way|0,val
+Syphilis|r261|another_way|0,train
+Syphilis|r262|another_way|0,train
+Syphilis|r263|another_way|0,train
+Syphilis|r264|another_way|0,test
+Syphilis|r265|another_way|0,train
+Syphilis|r266|another_way|0,val
+Syphilis|r267|another_way|0,train
+Syphilis|r268|another_way|0,train
+Syphilis|r269|another_way|0,train
+Syphilis|r274|another_way|0,test
+Syphilis|r275|another_way|0,train
+Syphilis|r279|another_way|0,train
+Syphilis|r280|another_way|0,train
+Syphilis|r281|another_way|0,val
+Syphilis|r282|another_way|0,train
+Syphilis|r285|another_way|0,train
+Syphilis|r286|another_way|0,train
+Syphilis|r287|another_way|0,train
+Syphilis|r289|another_way|0,train
+Syphilis|r290|another_way|0,test
+Syphilis|r291|another_way|0,train
+Syphilis|r292|another_way|0,train
+Syphilis|r293|another_way|0,val
+Syphilis|r294|another_way|0,test
+Syphilis|r295|another_way|0,train
+Syphilis|r296|another_way|0,val
+Syphilis|r297|another_way|0,train
+Syphilis|r298|another_way|0,train
+Syphilis|r301|another_way|0,train
+Syphilis|r302|another_way|0,train
+Syphilis|r303|another_way|0,train
+Syphilis|r304|another_way|0,test
+Syphilis|r305|another_way|0,train
+Syphilis|r311|another_way|0,train
+Syphilis|r312|another_way|0,train
+Syphilis|r313|another_way|0,train
+Syphilis|r314|another_way|0,val
+Syphilis|r316|another_way|0,train

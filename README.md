@@ -24,12 +24,16 @@ python3.12 -m venv .venv
 source .venv/bin/activate
 pip install -r requirements.txt
 python -m src.download_data     # saves data/raw/hash_sti_qa.xlsx (git-ignored), checks the MD5
+python -m src.data_prep         # cleans data, builds the answer bank, recreates the splits
 ```
+The split assignment (question IDs only, no text) is committed in `splits/`, so everyone gets identical splits.
 
 ## Project structure
 ```
 src/download_data.py                  # downloads the dataset from Harvard Dataverse
 src/load_raw.py                       # reads the 8 Excel sheets into one table
+src/data_prep.py                      # cleaning, answer bank, train/val/test + held-out-intent splits
+splits/                               # question_id -> split, held-out intent list (no data text)
 notebooks/01_data_exploration.ipynb   # dataset statistics and checks
 results/                              # figures and result tables
 ```
