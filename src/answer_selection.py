@@ -15,11 +15,13 @@ import numpy as np
 
 
 class AnswerSelector:
-    def __init__(self, encode, answer_bank):
-        # `encode` turns a list of texts into normalised vectors (e.g. EmbeddingRetriever.encode)
+    def __init__(self, encode, answer_bank, answer_vectors=None):
+        # `encode` turns a list of texts into normalised vectors (e.g. EmbeddingRetriever.encode).
+        # `answer_vectors` can be passed in pre-computed (the app does this to start faster).
         self.encode = encode
         self.bank = answer_bank.reset_index(drop=True)
-        self.answer_vectors = encode(self.bank["simple_answer"].tolist())
+        self.answer_vectors = (answer_vectors if answer_vectors is not None
+                               else encode(self.bank["simple_answer"].tolist()))
         self.rows_of_intent = self.bank.groupby("intent_id").indices  # intent -> row numbers in the bank
 
     def select(self, questions, intents, method="semantic"):

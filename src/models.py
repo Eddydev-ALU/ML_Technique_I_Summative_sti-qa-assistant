@@ -59,14 +59,29 @@ class EmbeddingRetriever:
         self.index_vectors = self.encode(index_texts)
         return self
 
-    def score(self, questions):
+    def save_index(self, path):
+        """Save the index vectors (numbers only, no text) so the app does not re-encode at start-up."""
+        np.savez(path, vectors=self.index_vectors, index_intent=self.index_intent, intents=np.array(self.intents))
+
+    def load_index(self, path):
+        """Load an index saved with save_index (used by the deployed app)."""
+        data = np.load(path, allow_pickle=False)
+        self.index_vectors, self.index_intent = data["vectors"], data["index_intent"]
+        self.intents = data["intents"].tolist()
+        return self
+
+    def score_with_similarities(self, questions):
+        """Return (intent score matrix, similarity to every index text)."""
         sims = self.encode(questions) @ self.index_vectors.T  # cosine similarity to every index text
         intent_scores = np.full((len(questions), len(self.intents)), -1.0)
         for j in range(len(self.intents)):
             members = self.index_intent == j
             if members.any():
                 intent_scores[:, j] = sims[:, members].max(axis=1)
-        return intent_scores
+        return intent_scores, sims
+
+    def score(self, questions):
+        return self.score_with_similarities(questions)[0]
 
 
 class TransformerClassifier:
