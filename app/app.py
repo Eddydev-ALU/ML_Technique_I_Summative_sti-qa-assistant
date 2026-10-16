@@ -30,15 +30,22 @@ from src.inference import DISCLAIMER, STIAssistant  # noqa: E402
 HF_REPO = os.environ.get("STI_QA_HF_REPO", "EddyIrasetsa/sti-qa-assistant")
 LOCAL_ARTIFACTS = os.path.join(ROOT, "app_artifacts")
 
+# Examples that were checked by hand to be answered confidently AND correctly (all 8 categories),
+# plus one off-topic question that shows the refusal.
 EXAMPLES = [
     "Can I get syphilis from kissing?",
-    "How soon after unprotected sex should I test for HIV?",
-    "Is genital herpes curable?",
-    "What are the signs of gonorrhoea in women?",
-    "Can hepatitis B pass from a mother to her baby?",
-    "Does washing after sex prevent STIs?",
-    "How do I plant maize?",  # out-of-domain example: the assistant should refuse
+    "Is there a cure for HIV?",
+    "What are the symptoms of HIV?",
+    "How can I prevent HIV?",
+    "Can I get an STI from a toilet seat?",
+    "What is gonorrhea?",
+    "Can chlamydia be cured?",
+    "How is trichomoniasis treated?",
+    "Is there a cure for herpes?",
+    "Is there a vaccine for hepatitis B?",
+    "How is hepatitis B spread?",
 ]
+OFF_TOPIC_EXAMPLE = "How do I plant maize?"
 
 
 @st.cache_resource(show_spinner="Loading the models (the first start can take a minute)...")
@@ -64,7 +71,10 @@ st.warning(DISCLAIMER, icon="⚠️")
 
 assistant = load_assistant()
 
-example = st.selectbox("Try an example (optional)", [""] + EXAMPLES)
+example = st.selectbox(
+    "Try an example (optional)", [""] + EXAMPLES + [OFF_TOPIC_EXAMPLE],
+    format_func=lambda q: f"{q}  (off-topic: shows a refusal)" if q == OFF_TOPIC_EXAMPLE else q,
+)
 with st.form("ask"):
     question = st.text_area("Your question", value=example, height=90,
                             placeholder="e.g. Can I get chlamydia from a toilet seat?")
