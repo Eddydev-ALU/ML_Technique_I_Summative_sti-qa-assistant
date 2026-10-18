@@ -16,3 +16,6 @@ __pycache__/
 .ipynb_checkpoints/
 .DS_Store
 .vscode/
+
+# personal notes
+demo_video_script.md
