@@ -1,33 +1,17 @@
 """
-inference.py - Answer one question with the deployed system. Used by the Streamlit app (app/app.py).
+Answers a single question with the deployed system (used by app/app.py).
 
-How a question is answered (two models):
-  Step 1 - which TOPIC (intent)?  Fine-tuned PubMedBERT bi-encoder.
-    Embed the question, compare it (cosine similarity) with all 2,502 known questions.
-    Each intent's score = similarity of its closest known question. Confidence = best score.
-  Step 2 - three zones, using two thresholds tuned in notebook 04:
-    confidence >= threshold      -> answer
-    low_threshold <= confidence  -> "not sure": ask "Did you mean a question about <topic>?" and show that answer
-    confidence < low_threshold   -> refuse ("I can only answer questions about STIs ...")
-  Step 3 - which ANSWER inside the topic?  Frozen MiniLM (not fine-tuned).
-    In the Excel file each answer sits on the same row as one question ("paired question").
-    - If the user's question is near-identical (cosine >= 0.95) to a paired question, the dataset itself
-      gives the answer: return that question's paired answer.
-    - Otherwise return the answer whose text is most similar to the question.
-    A frozen model is used here because fine-tuning pulled all questions of an intent together, which
-    makes the fine-tuned model blind to differences inside an intent (notebook 04, section 4:
-    frozen MiniLM 0.556 vs fine-tuned PubMedBERT 0.465 vs always-first-answer 0.202).
+1. Topic: the fine-tuned PubMedBERT compares the question with all 2,502 known questions.
+   Confidence = cosine similarity of the closest one.
+2. Decision: >= threshold -> answer, between the two thresholds -> "not sure, did you mean...",
+   below low_threshold -> refuse. Both thresholds were tuned in notebook 04.
+3. Answer inside the topic, with a frozen MiniLM: the paired answer if the question is almost
+   identical to a question that sits next to an answer in the Excel file, otherwise the answer with
+   the most similar text. Frozen because the fine-tuned model pulls all questions of an intent
+   together and can't tell them apart anymore (notebook 04: 0.556 vs 0.465).
 
-Privacy: nothing here stores, prints or logs the user's question.
-
-The artifacts folder (app_artifacts/, built by `python -m src.build_app`) contains:
-  model/            fine-tuned PubMedBERT (step 1)
-  step2_model/      frozen all-MiniLM-L6-v2 (step 3)
-  index.npz         step-1 embeddings of the known questions + their intent (numbers only, no question text)
-  paired.npz        step-3 embeddings of the paired questions + their answer ids (numbers and ids only)
-  answers.npz       step-3 embeddings of the answers
-  answer_bank.csv   the answers written by medical professionals (HASH dataset, CC BY-NC 4.0)
-  config.json       thresholds and other settings
+Questions are not stored or logged anywhere.
+Expects the folder made by src/build_app.py (models, embeddings, answer_bank.csv, config.json).
 """
 
 import json
@@ -50,20 +34,17 @@ OUT_OF_DOMAIN_MESSAGE = (
 NOT_SURE_MESSAGE = ("I'm not sure I understood your question. Did you mean a question about **{topic}**? "
                     "If so, here is the answer. If not, please try rephrasing.")
 
-# Cosine similarity (frozen MiniLM) above which two questions count as near-identical (step 3)
-NEAR_IDENTICAL = 0.95
+NEAR_IDENTICAL = 0.95  # cosine similarity with the frozen MiniLM
 
-# Words removed from intent names to make readable topic labels ("Herpes::Transmission_spread_infections"
-# -> "Transmission / spread"), because the category is shown separately.
+# removed from intent names for display, the category is shown separately anyway
 _DISEASE_WORDS = {"stis", "sti", "hiv", "gonorrhea", "chlamydia", "syphilis", "trichomoniasis", "hepatitis",
                   "herpes", "simplex", "virus", "infections"}
 
 
 def readable_intent(intent_id):
-    """Turn an intent id into a short human-readable topic label."""
+    """'Herpes::Transmission_spread_infections' -> 'Transmission / spread'"""
     label = intent_id.split("::", 1)[-1].replace("/", " / ").replace("_", " ")
     words = [w for w in label.split() if w.lower() not in _DISEASE_WORDS]
-    # "prevention ... Yes/No" sub-intents: show the yes/no in brackets
     if words and words[-1].lower() in ("yes", "no"):
         words = words[:-1] + [f"({words[-1].lower()})"]
     text = " ".join(words).replace(" / ", "/").replace("/", " / ").strip(" /")
@@ -78,12 +59,12 @@ class STIAssistant:
         self.threshold = self.config["threshold"]
         self.low_threshold = self.config["low_threshold"]
 
-        # Step 1: fine-tuned model + index of known questions
+        # topic model + index of known questions
         step1 = SentenceTransformer(os.path.join(artifacts_dir, "model"), device=device)
         self.retriever = EmbeddingRetriever(step1, mode="q2q").load_index(os.path.join(artifacts_dir, "index.npz"))
         self.intents = np.array(self.retriever.intents)
 
-        # Step 3: frozen model + paired questions + answers
+        # answer model + paired questions + answers
         self.step2 = EmbeddingRetriever(SentenceTransformer(os.path.join(artifacts_dir, "step2_model"), device=device))
         paired = np.load(os.path.join(artifacts_dir, "paired.npz"))
         self.paired_vectors, self.paired_answer_ids = paired["vectors"], paired["answer_ids"]
@@ -95,7 +76,7 @@ class STIAssistant:
         self.category_of = dict(zip(self.bank["intent_id"], self.bank["category"]))
 
     def choose_answer(self, question, intent):
-        """Step 3: one answer inside `intent`. Returns (answer_id, how it was chosen)."""
+        """Returns (answer_id, how it was chosen)."""
         question_vector = self.step2.encode([question])[0]
         rows = np.where(self.paired_intents == intent)[0]
         if len(rows):
@@ -106,17 +87,13 @@ class STIAssistant:
         return self.selector.select([question], [intent], method="semantic")[0], "most similar answer text"
 
     def answer(self, question, detail="simple"):
-        """Answer one question. detail = "simple" or "detailed".
-
-        Returns a dict with: status ("answer", "not_sure", "out_of_domain" or "empty"), answer text (or None),
-        message, topic, category, confidence, top_3 (list of {topic, category, similarity}), disclaimer.
-        """
-        question = " ".join(str(question).split())  # tidy spaces; nothing is stored
+        """detail is "simple" or "detailed". status is answer / not_sure / out_of_domain / empty."""
+        question = " ".join(str(question).split())
         if not question:
             return {"status": "empty", "answer": None, "message": "Please type a question.",
                     "top_3": [], "disclaimer": DISCLAIMER}
 
-        # Step 1: topic
+        # 1. topic
         scores = self.retriever.score([question])[0]
         order = np.argsort(-scores)
         top_3 = [{"topic": readable_intent(self.intents[j]),
@@ -127,12 +104,12 @@ class STIAssistant:
         result = {"confidence": round(confidence, 3), "threshold": round(self.threshold, 3),
                   "low_threshold": round(self.low_threshold, 3), "top_3": top_3, "disclaimer": DISCLAIMER}
 
-        # Step 2: answer, not sure, or refuse
+        # 2. answer, not sure or refuse
         if confidence < self.low_threshold:
             return {**result, "status": "out_of_domain", "answer": None, "message": OUT_OF_DOMAIN_MESSAGE}
         status = "answer" if confidence >= self.threshold else "not_sure"
 
-        # Step 3: the specific answer
+        # 3. which answer
         answer_id, how = self.choose_answer(question, best_intent)
         row = self.bank.loc[self.bank["answer_id"] == answer_id].iloc[0]
         text = row["long_answer"] if detail == "detailed" else row["simple_answer"]
@@ -143,7 +120,6 @@ class STIAssistant:
                 "answer_id": answer_id, "answer_selection": how}
 
 
-# Convenience function: answer(question, detail) with one shared, lazily loaded assistant
 _default_assistant = None
 
 

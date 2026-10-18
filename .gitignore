@@ -1,33 +1,18 @@
-# --- Secrets ---
-.env
-
-# --- Data & models (dataset license: never commit raw or derived data) ---
+# dataset is CC BY-NC: raw and processed data never go in the repo
 data/
 models/
-*.parquet
+app_artifacts/
 *.xlsx
-*.arrow
-*.pkl
 *.npy
-*.faiss
 *.safetensors
 *.bin
 *.pt
 
-# --- Python / tooling ---
+.env
 .venv/
 venv/
 __pycache__/
 *.py[cod]
 .ipynb_checkpoints/
-.cache/
-hf_cache/
-wandb/
 .DS_Store
-
-# --- Editor settings (local only) ---
 .vscode/
-
-# --- App files built by src/build_app.py (model + answer bank; uploaded to Hugging Face, never committed) ---
-app_artifacts/
-space_build/

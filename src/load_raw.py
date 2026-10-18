@@ -1,46 +1,28 @@
 """
-load_raw.py - Read the HASH STI Q&A Excel file into one pandas DataFrame.
+Reads the HASH Excel file into a single DataFrame.
 
-The Excel file (data/raw/hash_sti_qa.xlsx, see src/download_data.py) has one sheet per
-category (General STIs, HIV, Syphilis, ...). Every sheet has the same 6 columns:
-
-    0  <Category> Chatbot Intents      intent label, written only on the FIRST row of each intent block
-    1  Unnamed: 1                      almost always empty
-    2  Question(s) from Crowdsourcing  a question
-    3  Another Questions (...)         another question (a different way to ask)
-    4  Simple Answer                   short answer
-    5  Long Answer                     detailed answer
-
-An "intent block" starts at a row with an intent label and continues until the next label.
-This function only RESHAPES the data (no cleaning, no dropping). Cleaning is done in
-src/data_prep.py so that every change to the data is in one place and easy to explain.
+The file has one sheet per category, all with the same 6 columns: intent label, an unused column,
+two question columns (crowdsourced question / another way of asking), simple answer, long answer.
+The intent label is only written on the first row of each intent block, so it gets forward-filled.
+No cleaning happens here, that is all in data_prep.py.
 """
 
 import pandas as pd
 
 RAW_FILE = "data/raw/hash_sti_qa.xlsx"
 
-# Short names we give the 6 columns, in order
 COLUMN_NAMES = ["intent", "unnamed", "q_crowd", "q_other", "simple_answer", "long_answer"]
 
-# Words we expect in each original header. We check them so that if the file layout
-# is ever different, the code stops with a clear error instead of mixing up columns.
+# words expected in the original headers, so a changed file layout fails loudly
 EXPECTED_HEADER_WORDS = ["intent", "unnamed", "crowdsourcing", "another", "simple", "long"]
 
 
 def load_raw_sheets(path=RAW_FILE):
-    """Return one DataFrame with all sheets stacked, plus helper columns.
-
-    Added columns:
-      category      : sheet name (General STIs, HIV, ...)
-      excel_row     : row number as shown in Excel (header is row 1), for tracing back
-      intent_block  : intent label forward-filled down its block (so every row knows its intent)
-    """
-    sheets = pd.read_excel(path, sheet_name=None)  # dict: {sheet name: DataFrame}
+    """All sheets stacked, plus category, excel_row and intent_block columns."""
+    sheets = pd.read_excel(path, sheet_name=None)
 
     frames = []
     for sheet_name, df in sheets.items():
-        # Check the header before renaming
         for header, word in zip(df.columns, EXPECTED_HEADER_WORDS):
             if word not in str(header).lower():
                 raise ValueError(f"Sheet '{sheet_name}': unexpected header '{header}' (expected '{word}')")
@@ -48,8 +30,7 @@ def load_raw_sheets(path=RAW_FILE):
         df = df.copy()
         df.columns = COLUMN_NAMES
         df.insert(0, "category", sheet_name)
-        df.insert(1, "excel_row", range(2, len(df) + 2))
-        # The intent label is only on the first row of a block: copy it down to the rest
+        df.insert(1, "excel_row", range(2, len(df) + 2))  # row number as seen in Excel
         df["intent_block"] = df["intent"].ffill()
         frames.append(df)
 
@@ -57,7 +38,7 @@ def load_raw_sheets(path=RAW_FILE):
 
 
 def questions_long(raw):
-    """One row per question cell (both question columns), with its category and intent block."""
+    """One row per question cell, from both question columns."""
     parts = []
     for col, source in [("q_crowd", "crowdsourced"), ("q_other", "another_way")]:
         part = raw.loc[raw[col].notna(), ["category", "excel_row", "intent_block", col]]

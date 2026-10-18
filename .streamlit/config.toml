@@ -1,7 +1,6 @@
-# Streamlit settings (also used by Streamlit Community Cloud)
 [browser]
-gatherUsageStats = false   # privacy: do not send usage statistics
+gatherUsageStats = false
 
 [server]
 headless = true
-fileWatcherType = "none"   # no auto-reload on code changes (not needed when deployed; avoids noisy logs)
+fileWatcherType = "none"

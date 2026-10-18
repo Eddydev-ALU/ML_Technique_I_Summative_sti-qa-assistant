@@ -1,34 +1,12 @@
 """
-data_prep.py - Clean the HASH STI Q&A data, build the answer bank, and create the splits.
+Cleans the HASH data, builds the answer bank and creates the splits.
 
-Run from the project root (after python -m src.download_data):
-    python -m src.data_prep
+Usage: python -m src.data_prep   (after src.download_data)
 
-What it does, step by step:
-  1. Read the 8 Excel sheets (src/load_raw.py).
-  2. Fix intent labels: strip spaces; merge "Yes"/"No" sub-blocks and blocks without
-     any answer into the intent block just above them.
-  3. Build the ANSWER BANK: one entry per answer. An answer row without a question is a
-     continuation (bullet points spilling onto the next row) and is appended to the
-     answer above it.
-  4. Build the QUESTIONS table: one row per question, cleaned. Cells holding several
-     questions on separate lines are split. Duplicates are removed: a repeated question
-     under the same intent is kept once; a question that appears under DIFFERENT intents
-     is dropped, because we cannot know which label is right.
-  5. Group near-identical questions (e.g. only punctuation differs) so that a group always
-     lands in ONE split. Otherwise the test set would contain copies of training questions.
-  6. Splits (fixed seed). Created once, then FROZEN: later runs reuse splits/splits.csv
-     (use --resplit to create new ones):
-       held_out : ~10% of intents removed entirely (tests "I don't know" on unseen topics)
-       train / val / test : 70/15/15 of the groups of every remaining intent
-     Intents with fewer than 3 groups go entirely to train.
-
-Outputs:
-  data/processed/questions.csv    question text + labels      (git-ignored: contains data)
-  data/processed/answer_bank.csv  answers per intent          (git-ignored: contains data)
-  splits/splits.csv               question_id -> split        (committed: IDs only, no text)
-  splits/held_out_intents.txt     the held-out intents        (committed)
-  results/data_summary.json       counts only                 (committed)
+Steps: fix intent labels -> answer bank -> questions table -> remove duplicates ->
+group near-identical questions -> splits. The splits are created once and then reused from
+splits/splits.csv (pass --resplit to make new ones). Cleaned text goes to data/processed/
+(git-ignored), only the split ids and a summary with counts are committed.
 """
 
 import json
@@ -44,61 +22,54 @@ from sklearn.metrics.pairwise import cosine_similarity
 from src.load_raw import load_raw_sheets
 
 SEED = 42
-HELD_OUT_FRACTION = 0.10      # share of intents held out entirely
-MIN_QUESTIONS_TO_HOLD_OUT = 5  # only hold out intents with enough questions to test on
+HELD_OUT_FRACTION = 0.10
+MIN_QUESTIONS_TO_HOLD_OUT = 5  # held-out intents need enough questions to test on
 VAL_FRACTION = 0.15
 TEST_FRACTION = 0.15
-MIN_GROUPS_TO_SPLIT = 3       # an intent needs >= 3 groups to give one each to train/val/test
-NEAR_DUP_THRESHOLD = 0.90     # cosine similarity (character n-grams) for "near-identical"
+MIN_GROUPS_TO_SPLIT = 3        # need at least one group each for train, val and test
+NEAR_DUP_THRESHOLD = 0.90      # char n-gram cosine similarity
 
 PROCESSED_DIR = os.path.join("data", "processed")
 SPLITS_DIR = "splits"
 RESULTS_DIR = "results"
 
 
-# ----------------------------------------------------------------------------
-# Text cleaning helpers
-# ----------------------------------------------------------------------------
+# --- text cleaning ---
 def clean_text(text):
-    """Fix encoding oddities and spacing, keeping line breaks (used for answers)."""
+    """Normalise unicode and whitespace but keep line breaks (answers have bullet points)."""
     if pd.isna(text):
         return ""
-    # NFKC turns odd characters (e.g. non-breaking spaces) into their normal form
-    text = unicodedata.normalize("NFKC", str(text))
-    lines = [" ".join(line.split()) for line in text.split("\n")]  # collapse spaces/tabs per line
-    return "\n".join(line for line in lines if line)                 # drop empty lines
+    text = unicodedata.normalize("NFKC", str(text))  # e.g. non-breaking spaces
+    lines = [" ".join(line.split()) for line in text.split("\n")]
+    return "\n".join(line for line in lines if line)
 
 
 def clean_question(text):
-    """Clean a single question: one line, single spaces."""
     return " ".join(clean_text(text).split())
 
 
 def normalise_for_matching(text):
-    """Lower-case, no punctuation. Only used to detect duplicates, never shown or trained on."""
+    """Lowercase without punctuation, only used to find duplicates."""
     text = re.sub(r"[^a-z0-9\s]", " ", text.lower())
     return " ".join(text.split())
 
 
-# ----------------------------------------------------------------------------
-# Step 2: intent labels
-# ----------------------------------------------------------------------------
+# --- intent labels ---
 def assign_intents(raw):
-    """Give every row its final intent, after merging Yes/No and answer-less blocks upward."""
+    """Final intent per row. Blocks labelled just Yes/No, and blocks with no answer at all,
+    are merged into the block above them."""
     raw = raw.copy()
     raw["intent_label"] = raw["intent_block"].str.strip()
 
-    # Which blocks have at least one answer?
     has_answer = raw["simple_answer"].notna() | raw["long_answer"].notna()
     block_has_answer = has_answer.groupby([raw["category"], raw["intent_block"]]).transform("any")
 
-    # Walk down each sheet; a block that should be merged takes the previous block's intent
     final_intent = []
     merged_blocks = set()
     previous = None
     for i, row in raw.iterrows():
         if i == 0 or row["category"] != raw.at[i - 1, "category"]:
-            previous = None  # new sheet: nothing to merge into
+            previous = None  # new sheet
         starts_block = pd.notna(row["intent"])
         if starts_block:
             is_yes_no = row["intent_label"].lower() in ("yes", "no")
@@ -110,16 +81,14 @@ def assign_intents(raw):
         previous = current
 
     raw["intent_label"] = final_intent
-    # Intent names repeat across categories (e.g. 'definition_infections'), so prefix the category
+    # same intent names appear in several sheets, so prefix the category
     raw["intent_id"] = raw["category"] + "::" + raw["intent_label"]
     return raw, sorted(merged_blocks)
 
 
-# ----------------------------------------------------------------------------
-# Step 3: answer bank
-# ----------------------------------------------------------------------------
+# --- answer bank ---
 def build_answer_bank(raw):
-    """One entry per answer, with its intent and the question written on the same row (if any)."""
+    """One entry per answer, with its intent and the question on the same row (if any)."""
     entries = []
     for intent_id, block in raw.groupby("intent_id", sort=False):
         for _, row in block.iterrows():
@@ -129,7 +98,7 @@ def build_answer_bank(raw):
             row_question = clean_question(row["q_crowd"]) or clean_question(row["q_other"])
 
             if not row_question and entries and entries[-1]["intent_id"] == intent_id:
-                # Continuation row: append to the previous answer of this intent
+                # no question on this row: it's the rest of the previous answer (bullet points)
                 prev = entries[-1]
                 prev["simple_answer"] = "\n".join(t for t in [prev["simple_answer"], simple] if t)
                 prev["long_answer"] = "\n".join(t for t in [prev["long_answer"], long] if t)
@@ -140,28 +109,25 @@ def build_answer_bank(raw):
                 "intent_id": intent_id,
                 "category": row["category"],
                 "excel_row": row["excel_row"],
-                "anchor_question": row_question,  # question on the same row (used in step 2 of the model)
+                "anchor_question": row_question,
                 "simple_answer": simple,
                 "long_answer": long,
             })
 
     bank = pd.DataFrame(entries)
-    # If one of the two answers is missing, fall back to the other one (and record that we did)
+    # if only one version exists, use it for both
     bank["simple_missing"] = bank["simple_answer"] == ""
     bank["long_missing"] = bank["long_answer"] == ""
     bank.loc[bank["simple_missing"], "simple_answer"] = bank["long_answer"]
     bank.loc[bank["long_missing"], "long_answer"] = bank["simple_answer"]
-    # The first answer of each intent is its default answer
     bank["is_default"] = ~bank["intent_id"].duplicated()
     bank["answers_in_intent"] = bank.groupby("intent_id")["answer_id"].transform("count")
     return bank
 
 
-# ----------------------------------------------------------------------------
-# Step 4: questions
-# ----------------------------------------------------------------------------
+# --- questions ---
 def build_questions(raw, bank):
-    """One row per cleaned question, with its intent and (if on an answer row) that answer."""
+    """One row per question, with its intent and the answer on its row (if any)."""
     answer_on_row = dict(zip(zip(bank["category"], bank["excel_row"]), bank["answer_id"]))
 
     rows = []
@@ -169,13 +135,12 @@ def build_questions(raw, bank):
         for col, source in [("q_crowd", "crowdsourced"), ("q_other", "another_way")]:
             if pd.isna(row[col]):
                 continue
-            # A few cells hold several questions on separate lines: split them
+            # a few cells contain several questions on separate lines
             for line_no, line in enumerate(str(row[col]).split("\n")):
                 question = clean_question(line)
                 if not question:
                     continue
                 rows.append({
-                    # Stable ID built from the position in the Excel file (never from the text)
                     "question_id": f"{row['category']}|r{row['excel_row']}|{source}|{line_no}",
                     "category": row["category"],
                     "intent_id": row["intent_id"],
@@ -188,7 +153,8 @@ def build_questions(raw, bank):
 
 
 def remove_duplicates(questions):
-    """Drop repeated questions; drop questions that carry conflicting intent labels."""
+    """Keep one copy of repeated questions. Questions that appear under different intents are
+    dropped completely since there's no way to know which label is right."""
     questions = questions.copy()
     questions["norm"] = questions["question"].map(normalise_for_matching)
 
@@ -206,11 +172,9 @@ def remove_duplicates(questions):
     return questions.reset_index(drop=True), stats
 
 
-# ----------------------------------------------------------------------------
-# Step 5: near-duplicate groups
-# ----------------------------------------------------------------------------
+# --- near-duplicate groups ---
 def find_root(parent, i):
-    """Union-find helper: follow parent links to the group's representative."""
+    """Union-find."""
     while parent[i] != i:
         parent[i] = parent[parent[i]]
         i = parent[i]
@@ -218,41 +182,38 @@ def find_root(parent, i):
 
 
 def add_near_duplicate_groups(questions):
-    """Give each question a group_id; near-identical questions in a category share one."""
+    """Near-identical questions get the same group_id, so a whole group goes into one split
+    (otherwise test would contain copies of training questions)."""
     parent = list(range(len(questions)))
 
-    # Compare only within the same category. Across categories the questions differ in the
-    # disease name ("...from Herpes?" vs "...from HIV?"), which are different questions.
+    # only within a category: "...from Herpes?" and "...from HIV?" are different questions
     for _, cat_rows in questions.groupby("category"):
         idx = cat_rows.index.to_numpy()
         vectors = TfidfVectorizer(analyzer="char_wb", ngram_range=(3, 5)).fit_transform(cat_rows["norm"])
         sim = cosine_similarity(vectors)
         a, b = np.where(np.triu(sim, k=1) >= NEAR_DUP_THRESHOLD)
         for i, j in zip(idx[a], idx[b]):
-            parent[find_root(parent, i)] = find_root(parent, j)  # join the two groups
+            parent[find_root(parent, i)] = find_root(parent, j)
 
     roots = [find_root(parent, i) for i in range(len(questions))]
     questions = questions.copy()
     questions["group_id"] = pd.factorize(pd.Series(roots))[0]
-    # A group's intent = the most common intent among its members (used only to place the group)
     questions["group_intent"] = questions.groupby("group_id")["intent_id"].transform(lambda s: s.mode().iloc[0])
     return questions
 
 
-# ----------------------------------------------------------------------------
-# Step 6: splits
-# ----------------------------------------------------------------------------
+# --- splits ---
 def make_splits(questions):
-    """Return a Series question_id -> train/val/test/held_out, and the held-out intents."""
+    """Split per question (train/val/test/held_out) and the list of held-out intents."""
     rng = np.random.default_rng(SEED)
 
-    # (a) Hold out ~10% of intents (only those with enough questions to test on)
+    # hold out ~10% of the intents completely
     q_per_intent = questions.groupby("intent_id").size()
     candidates = sorted(q_per_intent[q_per_intent >= MIN_QUESTIONS_TO_HOLD_OUT].index)
     n_hold = round(HELD_OUT_FRACTION * len(q_per_intent))
     held_out = sorted(rng.choice(candidates, size=n_hold, replace=False))
 
-    # (b) Split the groups of every other intent 70/15/15
+    # 70/15/15 of the groups of every other intent
     group_split = {}
     groups = questions.drop_duplicates("group_id")[["group_id", "group_intent"]]
     for intent_id, intent_groups in groups.groupby("group_intent", sort=True):
@@ -274,11 +235,8 @@ def make_splits(questions):
     return split, held_out
 
 
-# ----------------------------------------------------------------------------
-# Helper for later phases
-# ----------------------------------------------------------------------------
 def load_prepared():
-    """Load questions (with their split) and the answer bank. Used by notebooks and training."""
+    """Questions with their split, and the answer bank (used by the notebooks and training)."""
     questions = pd.read_csv(os.path.join(PROCESSED_DIR, "questions.csv"))
     splits = pd.read_csv(os.path.join(SPLITS_DIR, "splits.csv"))
     bank = pd.read_csv(os.path.join(PROCESSED_DIR, "answer_bank.csv"), keep_default_na=False)
@@ -288,7 +246,6 @@ def load_prepared():
     return questions, bank
 
 
-# ----------------------------------------------------------------------------
 def main(resplit=False):
     raw = load_raw_sheets()
     raw, merged_blocks = assign_intents(raw)
@@ -301,9 +258,7 @@ def main(resplit=False):
     splits_file = os.path.join(SPLITS_DIR, "splits.csv")
     held_out_file = os.path.join(SPLITS_DIR, "held_out_intents.txt")
     if os.path.exists(splits_file) and not resplit:
-        # The splits are FROZEN once created and committed: reuse them, so every machine
-        # (laptop, Colab, a marker's computer) evaluates on exactly the same test questions,
-        # even if library versions differ slightly.
+        # reuse the committed splits so Colab and my laptop evaluate on the same questions
         frozen = pd.read_csv(splits_file)
         if set(frozen["question_id"]) != set(questions["question_id"]):
             raise RuntimeError("The cleaned questions no longer match splits/splits.csv. "
@@ -319,13 +274,11 @@ def main(resplit=False):
         with open(held_out_file, "w") as f:
             f.write("\n".join(held_out) + "\n")
 
-    # Save cleaned data (git-ignored: contains the dataset text)
     os.makedirs(PROCESSED_DIR, exist_ok=True)
     keep = ["question_id", "category", "intent_id", "question", "source", "row_answer_id", "group_id"]
     questions[keep].to_csv(os.path.join(PROCESSED_DIR, "questions.csv"), index=False)
     bank.to_csv(os.path.join(PROCESSED_DIR, "answer_bank.csv"), index=False)
 
-    # Summary (numbers only)
     seen = questions[questions["split"] != "held_out"]
     q_per_intent = seen.groupby("intent_id").size()
     group_sizes = questions.groupby("group_id").size()

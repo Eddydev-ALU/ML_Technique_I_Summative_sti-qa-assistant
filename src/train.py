@@ -1,27 +1,10 @@
 """
-train.py - Fine-tuning loops for the two neural models.
+Training loops.
 
-1. train_bi_encoder: fine-tune a sentence-embedding model with MultipleNegativesRankingLoss (MNRL).
-
-   Training data = pairs (anchor, positive) that should be close in meaning:
-     q2q pairs: (question, another training question of the SAME intent)
-     q2a pairs: (question, an answer of its intent)
-   MNRL, for a batch of N pairs:
-     - embed the N anchors and the N positives
-     - build the N x N cosine-similarity matrix (anchor i vs positive j)
-     - for anchor i, the correct "class" is positive i; the other N-1 positives in the batch act
-       as NEGATIVES ("wrong answers"). Loss = cross-entropy over each row.
-   So the model learns: pull a question towards same-intent texts, push it away from others.
-   Important: if two pairs in a batch had the same intent, a "negative" would actually be correct.
-   We therefore build batches where every pair has a DIFFERENT intent.
-
-2. train_classifier: fine-tune DistilBERT with a classification head (one output per intent),
-   using ordinary cross-entropy loss.
-
-Both loops: AdamW optimiser, linear learning-rate warm-up then decay, evaluation on val after
-every epoch, EARLY STOPPING (stop when val accuracy has not improved for `patience` epochs, and
-keep the best epoch's weights). Train loss, val loss and val accuracy are logged per epoch so we
-can see overfitting (train loss keeps falling while val stops improving).
+train_bi_encoder: fine-tunes a sentence-transformers model with MultipleNegativesRankingLoss on
+(question, same-intent question) and (question, answer) pairs, with early stopping on val accuracy.
+train_bi_encoder_final: same thing on all the data for a fixed number of epochs (deployed model).
+train_classifier: fine-tunes DistilBERT with a classification head and cross-entropy.
 """
 
 import copy
@@ -38,11 +21,11 @@ from transformers import AutoModelForSequenceClassification, AutoTokenizer, get_
 from src.evaluate import ranking_metrics
 from src.models import EmbeddingRetriever, TransformerClassifier, get_device
 
-MNRL_SCALE = 20.0  # multiplies cosine similarities before softmax (same default as sentence-transformers)
+MNRL_SCALE = 20.0  # same default as sentence-transformers
 
 
 def free_memory():
-    """Release GPU memory held by models that are no longer used."""
+    """Free GPU memory between experiments (PubMedBERT ran out of memory without this)."""
     import gc
     gc.collect()
     if torch.cuda.is_available():
@@ -52,35 +35,30 @@ def free_memory():
 
 
 def set_seed(seed):
-    """Fix all random number generators so runs are repeatable (GPU runs can still vary slightly)."""
+    """GPU runs can still differ slightly even with a fixed seed."""
     random.seed(seed)
     np.random.seed(seed)
     torch.manual_seed(seed)
 
 
 def evaluate_model(model, data):
-    """Ranking metrics of a fitted model (anything with .intents and .score) on a DataFrame."""
+    """Metrics for any fitted model that has .intents and .score()."""
     index = {intent: j for j, intent in enumerate(model.intents)}
     true_idx = data["intent_id"].map(index).to_numpy()
     return ranking_metrics(model.score(data["question"].tolist()), true_idx)
 
 
-# ----------------------------------------------------------------------------
-# Bi-encoder (MNRL)
-# ----------------------------------------------------------------------------
+# --- bi-encoder ---
 def build_pairs(data, train, answer_bank, pair_types, rng):
-    """Make (anchor, positive, intent) pairs. Positives always come from TRAIN data / the answer bank.
-
-    `data` is the set of anchors (train questions for training, val questions for val loss).
-    A new random positive is drawn every time this is called (i.e. every epoch).
-    """
+    """(anchor, positive, intent) pairs. Positives always come from train or the answer bank.
+    Called every epoch, so each question gets a different random partner each time."""
     train_by_intent = train.groupby("intent_id")["question"].apply(list).to_dict()
     answers_by_intent = answer_bank.groupby("intent_id")["simple_answer"].apply(list).to_dict()
     pairs = []
     for question, intent in zip(data["question"], data["intent_id"]):
         if "q2q" in pair_types:
             others = [q for q in train_by_intent.get(intent, []) if q != question]
-            if others:  # an intent with a single training question has no partner
+            if others:
                 pairs.append((question, others[rng.integers(len(others))], intent))
         if "q2a" in pair_types and intent in answers_by_intent:
             answers = answers_by_intent[intent]
@@ -89,53 +67,55 @@ def build_pairs(data, train, answer_bank, pair_types, rng):
 
 
 def unique_intent_batches(pairs, batch_size, rng):
-    """Shuffle pairs into batches in which no two pairs share an intent (avoids false negatives)."""
+    """Batches where every pair has a different intent. Two same-intent pairs in one batch would
+    make a correct match count as a negative."""
     queues = {}
     for pair in rng.permutation(len(pairs)):
         queues.setdefault(pairs[pair][2], []).append(pairs[pair])
     batches = []
     while queues:
-        # take one pair from each of up to `batch_size` randomly chosen intents
         intents = list(queues)
         chosen = rng.choice(len(intents), size=min(batch_size, len(intents)), replace=False)
         batch = [queues[intents[c]].pop() for c in chosen]
         queues = {k: v for k, v in queues.items() if v}
-        if len(batch) > 1:  # a batch of 1 has no negatives, so it teaches nothing
+        if len(batch) > 1:  # a single pair has no negatives
             batches.append(batch)
     return batches
 
 
 def embed(model, texts, device):
-    """Sentence embeddings WITH gradients (model.encode() switches gradients off)."""
-    features = model.preprocess(texts)  # tokenise: text -> token ids + attention mask
-    # move the tensors to the GPU/CPU (some entries are plain metadata, not tensors)
+    """Embeddings with gradients (model.encode() runs without them)."""
+    features = model.preprocess(texts)
     features = {k: (v.to(device) if torch.is_tensor(v) else v) for k, v in features.items()}
     return model(features)["sentence_embedding"]
 
 
 def mnrl_loss(model, batch, device):
-    """MultipleNegativesRankingLoss for one batch of (anchor, positive, intent) pairs."""
+    """MultipleNegativesRankingLoss.
+
+    For N pairs: cosine similarity of every anchor with every positive gives an N x N matrix.
+    Anchor i should match positive i (the diagonal), the other N-1 positives in the batch act as
+    negatives. Cross-entropy over each row pulls same-intent texts together and pushes the rest apart.
+    """
     anchors = F.normalize(embed(model, [p[0] for p in batch], device), dim=-1)
     positives = F.normalize(embed(model, [p[1] for p in batch], device), dim=-1)
-    similarity = anchors @ positives.T * MNRL_SCALE         # N x N matrix
-    targets = torch.arange(len(batch), device=device)       # anchor i belongs with positive i
+    similarity = anchors @ positives.T * MNRL_SCALE
+    targets = torch.arange(len(batch), device=device)
     return F.cross_entropy(similarity, targets)
 
 
 def train_bi_encoder(base_model, train, val, answer_bank, pair_types=("q2q", "q2a"), eval_mode="q2q",
                      batch_size=32, lr=2e-5, max_epochs=10, patience=2, warmup_ratio=0.1, max_seq_length=256,
                      seed=42, verbose=True):
-    """Fine-tune `base_model` with MNRL. Returns (best model, per-epoch history DataFrame)."""
+    """Returns the best model (by val accuracy) and a per-epoch history."""
     set_seed(seed)
     rng = np.random.default_rng(seed)
     device = get_device()
     model = SentenceTransformer(base_model, device=device)
-    # Longer texts are cut at `max_seq_length` tokens. Memory grows with the square of the length,
-    # so this keeps bigger models (e.g. PubMedBERT, default 512) within GPU memory.
-    # Questions are short (median 7 words) and most answers fit easily.
+    # PubMedBERT defaults to 512 tokens and ran out of memory on long answers; 256 is plenty
     model.max_seq_length = min(model.max_seq_length, max_seq_length)
 
-    # Val pairs are built once so val loss is comparable between epochs
+    # fixed val pairs so val loss is comparable across epochs
     val_pairs = build_pairs(val, train, answer_bank, pair_types, np.random.default_rng(seed))
     val_batches = unique_intent_batches(val_pairs, batch_size, np.random.default_rng(seed))
 
@@ -175,7 +155,7 @@ def train_bi_encoder(base_model, train, val, answer_bank, pair_types=("q2q", "q2
             print(f"epoch {epoch}: train loss {history[-1]['train_loss']:.4f} | val loss {val_loss:.4f} | "
                   f"val acc@1 {acc:.3f} | {history[-1]['seconds']}s")
 
-        # Early stopping: keep the best weights, stop after `patience` epochs without improvement
+        # early stopping on val accuracy, keeping the best weights
         if acc > best_acc:
             best_acc, best_state, bad_epochs = acc, copy.deepcopy(model.state_dict()), 0
         else:
@@ -191,12 +171,8 @@ def train_bi_encoder(base_model, train, val, answer_bank, pair_types=("q2q", "q2
 
 def train_bi_encoder_final(base_model, data, answer_bank, pair_types=("q2q", "q2a"), epochs=4, batch_size=32,
                            lr=2e-5, warmup_ratio=0.1, max_seq_length=256, seed=42, verbose=True):
-    """Train the DEPLOYED model on ALL questions for a fixed number of epochs.
-
-    There is no validation set left to early-stop on, so we use the number of epochs that worked
-    best in the experiments (seed study: best epoch was usually 4). Same loss and settings as
-    train_bi_encoder. Returns (model, per-epoch history DataFrame).
-    """
+    """Deployed model: trained on all questions. Nothing is left for early stopping, so it uses
+    4 epochs, the best epoch in most seed-study runs."""
     set_seed(seed)
     rng = np.random.default_rng(seed)
     device = get_device()
@@ -228,12 +204,10 @@ def train_bi_encoder_final(base_model, data, answer_bank, pair_types=("q2q", "q2
     return model, pd.DataFrame(history)
 
 
-# ----------------------------------------------------------------------------
-# Transformer classifier (cross-entropy)
-# ----------------------------------------------------------------------------
+# --- classifier ---
 def train_classifier(base_model, train, val, batch_size=16, lr=5e-5, max_epochs=15, patience=3,
                      warmup_ratio=0.1, max_length=128, seed=42, verbose=True):
-    """Fine-tune a Transformer classifier. Returns (TransformerClassifier, history DataFrame)."""
+    """Returns a TransformerClassifier (best epoch by val accuracy) and the history."""
     set_seed(seed)
     rng = np.random.default_rng(seed)
     device = get_device()
@@ -261,12 +235,12 @@ def train_classifier(base_model, train, val, batch_size=16, lr=5e-5, max_epochs=
         start = time.time()
         model.train()
         train_losses = []
-        order = rng.permutation(len(questions))  # new shuffle every epoch
+        order = rng.permutation(len(questions))
         for i in range(0, len(order), batch_size):
             idx = order[i:i + batch_size]
             batch = tokenizer([questions[j] for j in idx], padding=True, truncation=True,
                               max_length=max_length, return_tensors="pt").to(device)
-            out = model(**batch, labels=torch.tensor(labels[idx], device=device))  # out.loss = cross-entropy
+            out = model(**batch, labels=torch.tensor(labels[idx], device=device))
             out.loss.backward()
             optimizer.step()
             scheduler.step()

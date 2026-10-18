@@ -1,22 +1,10 @@
 """
-build_app.py - Package everything the web app needs into app_artifacts/.
+Builds app_artifacts/: everything the app needs (both models, embeddings, answers, thresholds).
 
-Run from the project root, after training the final model (notebook 05):
-    python -m src.build_app
+Usage: python -m src.build_app   (after notebook 05)
 
-app_artifacts/ (git-ignored) is uploaded ONCE to a Hugging Face model repository; the Streamlit app
-(app/app.py) downloads it from there when it starts. It contains:
-  README.md         model card (license, attribution, how it was trained)
-  model/            the fine-tuned PubMedBERT model (step 1: topic)
-  step2_model/      frozen all-MiniLM-L6-v2 (step 3: answer inside the topic)
-  index.npz         step-1 embeddings of all known questions + their intents (numbers, no text)
-  paired.npz        step-3 embeddings of the paired questions + their answer ids (no text)
-  answers.npz       step-3 embeddings of the answers
-  answer_bank.csv   the answers (HASH dataset, CC BY-NC 4.0)
-  config.json       thresholds and settings
-
-What gets PUBLISHED when this folder is uploaded: the models, the embeddings and the answer texts.
-The question texts themselves are NOT included.
+The folder is uploaded to a Hugging Face model repo and the Streamlit app downloads it on start-up.
+It contains the answers and embeddings but not the question texts.
 """
 
 import json
@@ -30,13 +18,13 @@ from src.data_prep import load_prepared
 from src.models import EmbeddingRetriever, get_device
 
 MODEL_DIR = "models/final_bi_encoder"
-STEP2_MODEL = "sentence-transformers/all-MiniLM-L6-v2"  # frozen, picks the answer inside the topic
+STEP2_MODEL = "sentence-transformers/all-MiniLM-L6-v2"  # frozen, picks the answer
 THRESHOLD_FILE = "results/ood_threshold.json"
 OUT = "app_artifacts"
 GITHUB_URL = "https://github.com/Eddydev-ALU/ML_Technique_I_Summative_sti-qa-assistant"
 
-# Model card for the Hugging Face repository (and for model/, replacing the base model's card, which
-# sentence-transformers copies unchanged when saving and which would wrongly describe our model and license)
+# sentence-transformers copies the base model's card when saving, which describes the wrong model
+# and license, so it gets replaced with this one
 MODEL_CARD = """\
 ---
 base_model: NeuML/pubmedbert-base-embeddings
@@ -68,16 +56,16 @@ Dataset* (Version 1). Harvard Dataverse. https://doi.org/10.7910/DVN/5SWM5U. Inf
 
 def main():
     if os.path.exists(OUT):
-        shutil.rmtree(OUT)  # always rebuild from scratch
+        shutil.rmtree(OUT)
     os.makedirs(OUT)
 
-    # 1. Step 1: index of ALL known questions, encoded with the final fine-tuned model
+    # topic model index over all questions
     questions, answer_bank = load_prepared()
     encoder = SentenceTransformer(MODEL_DIR, device=get_device())
     retriever = EmbeddingRetriever(encoder, mode="q2q").fit(questions["question"], questions["intent_id"], answer_bank)
     retriever.save_index(os.path.join(OUT, "index.npz"))
 
-    # 2. Step 3: frozen MiniLM embeddings of the paired questions and of the answers
+    # frozen MiniLM vectors for picking the answer
     bank = answer_bank[["answer_id", "intent_id", "category", "simple_answer", "long_answer"]].reset_index(drop=True)
     bank.to_csv(os.path.join(OUT, "answer_bank.csv"), index=False)
     step2 = EmbeddingRetriever(STEP2_MODEL)
@@ -87,7 +75,6 @@ def main():
     np.savez(os.path.join(OUT, "answers.npz"), vectors=step2.encode(bank["simple_answer"]))
     step2.model.save(os.path.join(OUT, "step2_model"))
 
-    # 3. Settings
     with open(THRESHOLD_FILE) as f:
         threshold_info = json.load(f)
     config = {"threshold": threshold_info["threshold"], "low_threshold": threshold_info["low_threshold"],
@@ -98,7 +85,6 @@ def main():
     with open(os.path.join(OUT, "config.json"), "w") as f:
         json.dump(config, f, indent=2)
 
-    # 4. Fine-tuned model + model cards
     shutil.copytree(MODEL_DIR, os.path.join(OUT, "model"))
     for path in [os.path.join(OUT, "README.md"), os.path.join(OUT, "model", "README.md")]:
         with open(path, "w") as f:

@@ -1,17 +1,10 @@
 """
-app.py - Streamlit web interface for the STI question-answering assistant.
+Streamlit interface for the STI Q&A assistant.
 
-Run locally (after `python -m src.build_app`):   streamlit run app/app.py
-On Streamlit Community Cloud: deploy this repository with main file `app/app.py`.
-
-Where the model files come from:
-  - locally: the app_artifacts/ folder built by src/build_app.py;
-  - on the cloud: the same folder, downloaded once from a Hugging Face model repository
-    (set STI_QA_HF_REPO to change which one).
-
-The app only displays what src/inference.py returns. It does not log, store or print questions
-(sensitive topic; users may be teenagers), and Streamlit's usage statistics are switched off
-in .streamlit/config.toml.
+Local: python -m src.build_app, then streamlit run app/app.py
+Streamlit Cloud: main file app/app.py. The model files are downloaded from the Hugging Face repo
+on start-up (STI_QA_HF_REPO). Questions are never stored or logged, and usage stats are turned
+off in .streamlit/config.toml.
 """
 
 import os
@@ -20,7 +13,6 @@ import sys
 import pandas as pd
 import streamlit as st
 
-# Make `src` importable: the project root is one level above app/
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 if ROOT not in sys.path:
     sys.path.insert(0, ROOT)
@@ -30,8 +22,7 @@ from src.inference import DISCLAIMER, STIAssistant  # noqa: E402
 HF_REPO = os.environ.get("STI_QA_HF_REPO", "EddyIrasetsa/sti-qa-assistant")
 LOCAL_ARTIFACTS = os.path.join(ROOT, "app_artifacts")
 
-# Examples that were checked by hand to be answered confidently AND correctly (all 8 categories),
-# plus one off-topic question that shows the refusal.
+# checked by hand: confident and correct answers, covering all 8 categories
 EXAMPLES = [
     "Can I get syphilis from kissing?",
     "Is there a cure for HIV?",
@@ -50,7 +41,7 @@ OFF_TOPIC_EXAMPLE = "How do I plant maize?"
 
 @st.cache_resource(show_spinner="Loading the models (the first start can take a minute)...")
 def load_assistant():
-    """Load both models and the answers once; Streamlit keeps them in memory for every visitor."""
+    """Loaded once and shared between visitors."""
     if os.path.exists(os.path.join(LOCAL_ARTIFACTS, "config.json")):
         path = LOCAL_ARTIFACTS
     else:

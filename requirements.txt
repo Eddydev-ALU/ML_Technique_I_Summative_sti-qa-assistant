@@ -1,27 +1,19 @@
-# Pinned versions (Python 3.12).
-
-# Phase 1: data loading and exploration
+# Python 3.12
 pandas==3.0.6
 numpy==2.5.4
-openpyxl==3.1.5        # lets pandas read the .xlsx dataset file
+openpyxl==3.1.5
 matplotlib==3.11.2
-scikit-learn==1.9.1    # TF-IDF, logistic regression, metrics
-
-# Phase 3: baselines
+scikit-learn==1.9.1
 rank-bm25==0.2.2
-
-# Phase 4: neural models
 torch==2.14.1
 sentence-transformers==6.1.0
 transformers==5.20.0
 accelerate==1.15.0
 huggingface_hub==1.33.0
-tabulate==0.10.0       # markdown tables for results/experiments.md
-
-# Phase 6: web app (deployment-only packages are in app/requirements.txt)
+tabulate==0.10.0
 streamlit==1.66.0
 
-# Notebooks
+# notebooks
 jupyter==1.1.1
 ipykernel==7.4.0
 nbconvert==7.17.2

@@ -21,7 +21,7 @@ Dataset* (Version 1) [Data set]. Harvard Dataverse. https://doi.org/10.7910/DVN/
 - License: **CC BY-NC 4.0** (attribution required, non-commercial use only).
 - **No raw or processed data is committed to this repository.** `src/download_data.py` downloads the file.
 
-## Results so far (seen intents, test set: 333 questions)
+## Results (seen intents, test set: 333 questions)
 Settings chosen on the validation set; test reported once. Full table: [results/experiments.md](results/experiments.md).
 
 | Model | Trained? | Test accuracy@1 | Test MRR | Test macro-F1 |

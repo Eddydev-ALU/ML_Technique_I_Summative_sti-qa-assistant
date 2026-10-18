@@ -3,11 +3,10 @@
 `off_topic_questions.csv` holds 60 questions that the assistant should **not** answer, used only to
 evaluate the "I don't know" (out-of-domain) behaviour. They are **never used for training**.
 
-**Provenance (disclosure):** these questions were **written by an AI assistant (Claude, Anthropic)** at
-the student's request and reviewed by the student. They are not part of the HASH dataset and are not
-real user questions. Because they were not collected from real users, they may be cleaner and more
-"typical" than real off-topic messages, which could make out-of-domain detection look easier than
-it is in practice. This is discussed in the report's limitations.
+**Disclosure:** I generated these questions with an AI assistant (Claude, Anthropic) and reviewed them.
+They are not from the HASH dataset and they are not real user messages. Real off-topic messages are
+probably messier, so out-of-domain detection may look easier on these than it would be in practice
+(see the limitations in the report).
 
 | type | count | what it tests |
 |---|---|---|
